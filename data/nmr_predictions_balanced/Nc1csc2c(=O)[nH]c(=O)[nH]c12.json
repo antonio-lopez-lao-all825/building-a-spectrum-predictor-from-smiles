@@ -1,0 +1,76 @@
+{
+  "molfile": "\nActelion Java MolfileCreator 1.0\n\n 17 18  0  0  0  0  0  0  0  0999 V2000\n   10.4592    3.1531    0.0000 C   0  0  0  0  0  0  0  0  0  1  0  0\n   10.4678    1.4782    0.0000 C   0  0  0  0  0  0  0  0  0  2  0  0\n   13.3903    3.1702    0.0000 N   0  0  0  0  0  0  0  0  0  3  0  0\n   11.9034    4.0161    0.0000 C   0  0  0  0  0  0  0  0  0  4  0  0\n   13.3903    1.4782    0.0000 C   0  0  0  0  0  0  0  0  0  5  0  0\n    8.8528    3.6659    0.0000 S   0  0  0  0  0  0  0  0  0  6  0  0\n   11.9204    0.6323    0.0000 N   0  0  0  0  0  0  0  0  0  7  0  0\n    8.8698    0.9399    0.0000 C   0  0  0  0  0  0  0  0  0  8  0  0\n    7.8701    2.2986    0.0000 C   0  0  0  0  0  0  0  0  0  9  0  0\n   11.9034    5.7081    0.0000 O   0  0  0  0  0  0  0  0  0 10  0  0\n   14.8515    0.6323    0.0000 O   0  0  0  0  0  0  0  0  0 11  0  0\n    8.3571   -0.6665    0.0000 N   0  0  0  0  0  0  0  0  0 12  0  0\n   14.1337    3.5932    0.0000 H   0  0  0  0  0  0  0  0  0 13  0  0\n   11.9118   -0.2137    0.0000 H   0  0  0  0  0  0  0  0  0 14  0  0\n    6.8788    2.2943    0.0000 H   0  0  0  0  0  0  0  0  0 15  0  0\n    7.2038   -0.9180    0.0000 H   0  0  0  0  0  0  0  0  0 16  0  0\n    9.1515   -1.5396    0.0000 H   0  0  0  0  0  0  0  0  0 17  0  0\n  2  1  2  0  0  0  0\n  3  4  1  0  0  0  0\n  4  1  1  0  0  0  0\n  5  3  1  0  0  0  0\n  6  1  1  0  0  0  0\n  7  2  1  0  0  0  0\n  8  2  1  0  0  0  0\n  9  6  1  0  0  0  0\n 10  4  2  0  0  0  0\n 11  5  2  0  0  0  0\n 12  8  1  0  0  0  0\n  9  8  2  0  0  0  0\n  7  5  1  0  0  0  0\n  3 13  1  0  0  0  0\n  7 14  1  0  0  0  0\n  9 15  1  0  0  0  0\n 12 16  1  0  0  0  0\n 12 17  1  0  0  0  0\nM  END\n",
+  "diaIDs": [
+    "dcoD`NFVt@cIEDhebUBmRmTt@LQEA~dICaU@",
+    "dcoD`FF^t@cIEDeDkeBmLsTt@LQeA~dIcaU@",
+    "dcoD`NFVt@cIEDhebUBmRmTt@LQuA~dIryU@",
+    "dcoD`NFVt@cIEDhebUBmRmTt@LQeA~dIcaU@",
+    "dcoD`NFVt@cIEDhebUBmRmTt@LPmA~dHkaU@",
+    "dcoD`NFVt@cIEDhebUBmRmTt@LPEA~dHCeU@",
+    "dcoD`NFVt@cIEDhebUBmRmTt@LPMA~dHJyU@",
+    "dcoD`NFVt@cIEDhebUBmRmTt@LQUA~dISaU@",
+    "dcoD`FF^t@cIDheD]eRmLsTt@LQEA~dICaU@",
+    "dcoD`NFVt@cIEDhebUBmRmTt@LPuA~dHsyU@",
+    "dcoD`NFVt@cIEDhebUBmRmTt@LQmA~dIkyU@",
+    "dcoD`NFVt@cIEDhebUBmRmTt@LQMA~dIJyU@",
+    "dk_DPHhrXIfPaIf[u^E]jYjjT@_iB@bUP",
+    "dk_DPHiRLIfPaIf[VVF]jYjeh@_iB@bUP",
+    "dk_DPJEYLIe@cHheEeDRY]ijiiX@_iB@bUP",
+    "dk_DPHkULIg`aIYe^Vz]jYjYh@_iB@bUP",
+    "dk_DPHkULIg`aIYe^Vz]jYjYh@_iB@bUP"
+  ],
+  "nucleus": "1H",
+  "signals": [
+    {
+      "id": "83c14372-474e-4991-8f98-2a8b46277210",
+      "atoms": [
+        14
+      ],
+      "diaIDs": [
+        "dk_DPJEYLIe@cHheEeDRY]ijiiX@_iB@bUP"
+      ],
+      "nbAtoms": 1,
+      "delta": 6.305,
+      "js": []
+    }
+  ],
+  "joinedSignals": [
+    {
+      "id": "d8d92cd1-b532-42e0-82ec-6e3ee0f798eb",
+      "nbAtoms": 1,
+      "delta": 6.305,
+      "diaIDs": [
+        "dk_DPJEYLIe@cHheEeDRY]ijiiX@_iB@bUP"
+      ],
+      "atoms": [
+        14
+      ],
+      "js": [],
+      "multiplicity": "s"
+    }
+  ],
+  "ranges": [
+    {
+      "id": "9f525199-0da8-4727-adcc-be7d4a3f354f",
+      "from": 6.255,
+      "to": 6.3549999999999995,
+      "integration": 1,
+      "signals": [
+        {
+          "id": "d8d92cd1-b532-42e0-82ec-6e3ee0f798eb",
+          "nbAtoms": 1,
+          "delta": 6.305,
+          "diaIDs": [
+            "dk_DPJEYLIe@cHheEeDRY]ijiiX@_iB@bUP"
+          ],
+          "atoms": [
+            14
+          ],
+          "js": [],
+          "multiplicity": "s"
+        }
+      ]
+    }
+  ],
+  "status": "ok"
+}

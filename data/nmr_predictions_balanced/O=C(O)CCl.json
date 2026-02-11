@@ -1,0 +1,81 @@
+{
+  "molfile": "\nActelion Java MolfileCreator 1.0\n\n  8  7  0  0  0  0  0  0  0  0999 V2000\n    0.0000    0.0000    0.0000 Cl  0  0  0  0  0  0  0  0  0  0  0  0\n    3.2810    0.0000    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n    3.2810   -2.8442    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n    2.4682   -1.4221    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    0.8278   -1.4221    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    2.8502    1.5803    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.1657   -2.0015    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n    0.8329   -2.5721    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n  1  5  1  0  0  0  0\n  2  4  1  0  0  0  0\n  3  4  2  0  0  0  0\n  4  5  1  0  0  0  0\n  2  6  1  0  0  0  0\n  5  7  1  1  0  0  0\n  5  8  1  0  0  0  0\nM  END\n",
+  "diaIDs": [
+    "gJPhLQDIKTpCDEA~dP^Dvj@",
+    "gJPhLQDIKUHCDuA~dSOeT",
+    "gJPhLQDIKTpCDuA~dSOeT",
+    "gJPhLQDIKTpCDUA~dQNET",
+    "gJPhLQDIKTpCDeA~dRNET",
+    "gGPdIaLvHRVzZ@_iDBIU@",
+    "gGPdCQLjHR[jfdhC}H`QJh",
+    "gGPdCQLjHR[jfdhC}H`QJh"
+  ],
+  "nucleus": "1H",
+  "signals": [
+    {
+      "id": "0c15d34d-d48e-4cd6-8f5c-d32e20d3db3f",
+      "atoms": [
+        6
+      ],
+      "diaIDs": [
+        "gGPdCQLjHR[jfdhC}H`QJh"
+      ],
+      "nbAtoms": 1,
+      "delta": 4.177,
+      "js": []
+    },
+    {
+      "id": "15d34dd4-8e0c-464f-9cd3-2e20d3db3fa8",
+      "atoms": [
+        7
+      ],
+      "diaIDs": [
+        "gGPdCQLjHR[jfdhC}H`QJh"
+      ],
+      "nbAtoms": 1,
+      "delta": 4.177,
+      "js": []
+    }
+  ],
+  "joinedSignals": [
+    {
+      "id": "69565bf4-4638-43ac-a763-ad783715d798",
+      "nbAtoms": 2,
+      "delta": 4.177,
+      "diaIDs": [
+        "gGPdCQLjHR[jfdhC}H`QJh"
+      ],
+      "atoms": [
+        6,
+        7
+      ],
+      "js": [],
+      "multiplicity": "s"
+    }
+  ],
+  "ranges": [
+    {
+      "id": "fd96ac6d-6e4c-4f0c-9f8f-4fbf894e4e32",
+      "from": 4.127,
+      "to": 4.226999999999999,
+      "integration": 2,
+      "signals": [
+        {
+          "id": "69565bf4-4638-43ac-a763-ad783715d798",
+          "nbAtoms": 2,
+          "delta": 4.177,
+          "diaIDs": [
+            "gGPdCQLjHR[jfdhC}H`QJh"
+          ],
+          "atoms": [
+            6,
+            7
+          ],
+          "js": [],
+          "multiplicity": "s"
+        }
+      ]
+    }
+  ],
+  "status": "ok"
+}

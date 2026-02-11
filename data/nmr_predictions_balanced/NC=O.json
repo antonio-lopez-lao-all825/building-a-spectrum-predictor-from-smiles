@@ -1,0 +1,65 @@
+{
+  "molfile": "\nActelion Java MolfileCreator 1.0\n\n  6  5  0  0  0  0  0  0  0  0999 V2000\n   -0.1828   -0.8392    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n    1.4828   -1.8007    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    3.1480   -0.8392    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.1828    0.5070    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.3486   -1.5123    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n    1.4829   -2.7622    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n  2  1  1  0  0  0  0\n  2  3  2  0  0  0  0\n  1  4  1  0  0  0  0\n  1  5  1  0  0  0  0\n  2  6  1  0  0  0  0\nM  END\n",
+  "diaIDs": [
+    "eMhDRVAbZC}IE\\j`",
+    "eMhDRVAbjC}IIpj`",
+    "eMhDRVAbJC}IA|j`",
+    "gCiHIaLiKR@RHDRj@",
+    "gCiHIaLiKR@RHDRj@",
+    "gCiHLaLiML@RHDRj@"
+  ],
+  "nucleus": "1H",
+  "signals": [
+    {
+      "id": "d02b9485-ce49-4460-8046-342943646455",
+      "atoms": [
+        5
+      ],
+      "diaIDs": [
+        "gCiHLaLiML@RHDRj@"
+      ],
+      "nbAtoms": 1,
+      "delta": 8.347,
+      "js": []
+    }
+  ],
+  "joinedSignals": [
+    {
+      "id": "17688215-7bdf-4b17-8302-639907aca4f3",
+      "nbAtoms": 1,
+      "delta": 8.347,
+      "diaIDs": [
+        "gCiHLaLiML@RHDRj@"
+      ],
+      "atoms": [
+        5
+      ],
+      "js": [],
+      "multiplicity": "s"
+    }
+  ],
+  "ranges": [
+    {
+      "id": "45338601-70a1-49b2-ad50-cd525d48dd69",
+      "from": 8.296999999999999,
+      "to": 8.397,
+      "integration": 1,
+      "signals": [
+        {
+          "id": "17688215-7bdf-4b17-8302-639907aca4f3",
+          "nbAtoms": 1,
+          "delta": 8.347,
+          "diaIDs": [
+            "gCiHLaLiML@RHDRj@"
+          ],
+          "atoms": [
+            5
+          ],
+          "js": [],
+          "multiplicity": "s"
+        }
+      ]
+    }
+  ],
+  "status": "ok"
+}

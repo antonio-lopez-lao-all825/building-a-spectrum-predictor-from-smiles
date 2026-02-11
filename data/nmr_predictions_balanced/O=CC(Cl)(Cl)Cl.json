@@ -1,0 +1,66 @@
+{
+  "molfile": "\nActelion Java MolfileCreator 1.0\n\n  7  6  0  0  0  0  0  0  0  0999 V2000\n    0.2362    0.6984    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    0.2362   -0.9380    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.1809   -1.7562    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n    0.2362    2.3347    0.0000 Cl  0  0  0  0  0  0  0  0  0  0  0  0\n    1.8726    0.6984    0.0000 Cl  0  0  0  0  0  0  0  0  0  0  0  0\n   -1.4001    0.6984    0.0000 Cl  0  0  0  0  0  0  0  0  0  0  0  0\n    0.9448   -1.3471    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n  2  1  1  0  0  0  0\n  1  4  1  0  0  0  0\n  1  5  1  0  0  0  0\n  1  6  1  0  0  0  0\n  2  3  2  0  0  0  0\n  2  7  1  0  0  0  0\nM  END\n",
+  "diaIDs": [
+    "gGQLJHaQFbLbdMT`LRTGzQHxUP",
+    "gGQLJHaQFbLbdMT`LPtGzQBxUP",
+    "gGQLJHaQFbLbdMT`LRtGzQJ~UP",
+    "gGQLJHaQFbLbdMT`LPTGzQAxSZh",
+    "gGQLJHaQFbLbdMT`LPTGzQAxSZh",
+    "gGQLJHaQFbLbdMT`LPTGzQAxSZh",
+    "gNqBDIdqEbGDIMuMT@RHDRj@"
+  ],
+  "nucleus": "1H",
+  "signals": [
+    {
+      "id": "46adf3a0-42cf-4509-8f75-132d5f3c6055",
+      "atoms": [
+        6
+      ],
+      "diaIDs": [
+        "gNqBDIdqEbGDIMuMT@RHDRj@"
+      ],
+      "nbAtoms": 1,
+      "delta": 9.966,
+      "js": []
+    }
+  ],
+  "joinedSignals": [
+    {
+      "id": "a7b427b0-0968-4cd5-afc6-fd9f8c96e379",
+      "nbAtoms": 1,
+      "delta": 9.966,
+      "diaIDs": [
+        "gNqBDIdqEbGDIMuMT@RHDRj@"
+      ],
+      "atoms": [
+        6
+      ],
+      "js": [],
+      "multiplicity": "s"
+    }
+  ],
+  "ranges": [
+    {
+      "id": "84d7b8e5-a467-4a92-81fe-2e557d5bb76a",
+      "from": 9.915999999999999,
+      "to": 10.016,
+      "integration": 1,
+      "signals": [
+        {
+          "id": "a7b427b0-0968-4cd5-afc6-fd9f8c96e379",
+          "nbAtoms": 1,
+          "delta": 9.966,
+          "diaIDs": [
+            "gNqBDIdqEbGDIMuMT@RHDRj@"
+          ],
+          "atoms": [
+            6
+          ],
+          "js": [],
+          "multiplicity": "s"
+        }
+      ]
+    }
+  ],
+  "status": "ok"
+}

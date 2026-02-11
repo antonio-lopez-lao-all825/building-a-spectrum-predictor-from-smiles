@@ -1,0 +1,131 @@
+{
+  "molfile": "\nActelion Java MolfileCreator 1.0\n\n 16 15  0  0  0  0  0  0  0  0999 V2000\n   18.2741    3.0278    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   19.6633    3.8282    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   21.0602    3.0278    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   22.4576    3.8282    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   18.2741    1.4190    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n   16.8851    3.8282    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n   22.4576    5.4372    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n   23.8466    3.0278    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n   21.0602    1.4190    0.0000 S   0  0  0  0  0  0  0  0  0  0  0  0\n   19.6633    5.4372    0.0000 S   0  0  0  0  0  0  0  0  0  0  0  0\n   18.9687    4.2325    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n   20.3617    2.6236    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n   15.3370    3.4120    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n   25.3947    3.4440    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n   22.1978    0.2814    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n   18.5255    6.5749    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n  1  2  1  0  0  0  0\n  2  3  1  0  0  0  0\n  3  4  1  0  0  0  0\n  1  5  2  0  0  0  0\n  1  6  1  0  0  0  0\n  4  7  2  0  0  0  0\n  4  8  1  0  0  0  0\n  3  9  1  0  0  0  0\n  2 10  1  0  0  0  0\n  2 11  1  1  0  0  0\n  3 12  1  1  0  0  0\n  6 13  1  0  0  0  0\n  8 14  1  0  0  0  0\n  9 15  1  0  0  0  0\n 10 16  1  0  0  0  0\nM  END\n",
+  "diaIDs": [
+    "dedBPBhY@HXHrJJJVUMSIEFT@qBTGzPbNET",
+    "dedBPBhY@HXHrJJJVUMSIEFT@qDTGzPdNET",
+    "dedBPBhY@HXHrJJJVUMSIEFT@qDTGzPdNET",
+    "dedBPBhY@HXHrJJJVUMSIEFT@qBTGzPbNET",
+    "dedBPBhY@HXHrJJJVUMSIEFT@qATGzPaOeT",
+    "dedBPBhY@HXHrJJJVUSSIEFT@qATGzPaOeT",
+    "dedBPBhY@HXHrJJJVUMSIEFT@qATGzPaOeT",
+    "dedBPBhY@HXHrJJJVUSSIEFT@qATGzPaOeT",
+    "dedBPBhY@HXHrJJJVUMSIEFT@q@TGzP`NUT",
+    "dedBPBhY@HXHrJJJVUMSIEFT@q@TGzP`NUT",
+    "dmTBpJZUBYPHxHrJSQRrjZfRJBHA~dHBIU@",
+    "dmTBpJZUBYPHxHrJSQRrjZfRJBHA~dHBIU@",
+    "dmTBpHrUBYhHxHRV{nijidHaj@_iB@bUP",
+    "dmTBpHrUBYhHxHRV{nijidHaj@_iB@bUP",
+    "dmTBpJZUBY`HxHrIQQRrjZfQJBhA~dHBIU@",
+    "dmTBpJZUBY`HxHrIQQRrjZfQJBhA~dHBIU@"
+  ],
+  "nucleus": "1H",
+  "signals": [
+    {
+      "id": "e326fea2-4207-4571-a502-e5c112081f96",
+      "atoms": [
+        10
+      ],
+      "diaIDs": [
+        "dmTBpJZUBYPHxHrJSQRrjZfRJBHA~dHBIU@"
+      ],
+      "nbAtoms": 1,
+      "delta": 4.208,
+      "js": [
+        {
+          "coupling": 4.01,
+          "atoms": [
+            11
+          ],
+          "diaIDs": [
+            "dmTBpJZUBYPHxHrJSQRrjZfRJBHA~dHBIU@"
+          ],
+          "multiplicity": "d",
+          "pathLength": 3
+        }
+      ]
+    },
+    {
+      "id": "26fea242-0725-4125-82e5-c112081f9695",
+      "atoms": [
+        11
+      ],
+      "diaIDs": [
+        "dmTBpJZUBYPHxHrJSQRrjZfRJBHA~dHBIU@"
+      ],
+      "nbAtoms": 1,
+      "delta": 4.208,
+      "js": [
+        {
+          "coupling": 4.01,
+          "atoms": [
+            10
+          ],
+          "diaIDs": [
+            "dmTBpJZUBYPHxHrJSQRrjZfRJBHA~dHBIU@"
+          ],
+          "multiplicity": "d",
+          "pathLength": 3
+        }
+      ]
+    }
+  ],
+  "joinedSignals": [
+    {
+      "id": "730266b8-e109-4343-afa0-edbc49101545",
+      "nbAtoms": 2,
+      "delta": 4.208,
+      "diaIDs": [
+        "dmTBpJZUBYPHxHrJSQRrjZfRJBHA~dHBIU@"
+      ],
+      "atoms": [
+        10,
+        11
+      ],
+      "js": [
+        {
+          "diaIDs": [
+            "dmTBpJZUBYPHxHrJSQRrjZfRJBHA~dHBIU@"
+          ],
+          "pathLength": 3,
+          "multiplicity": "d",
+          "coupling": 4.01
+        }
+      ],
+      "multiplicity": "d"
+    }
+  ],
+  "ranges": [
+    {
+      "id": "93244b21-adce-4cc4-b18e-44891284cc3d",
+      "from": 4.1529875,
+      "to": 4.2630125,
+      "integration": 2,
+      "signals": [
+        {
+          "id": "730266b8-e109-4343-afa0-edbc49101545",
+          "nbAtoms": 2,
+          "delta": 4.208,
+          "diaIDs": [
+            "dmTBpJZUBYPHxHrJSQRrjZfRJBHA~dHBIU@"
+          ],
+          "atoms": [
+            10,
+            11
+          ],
+          "js": [
+            {
+              "diaIDs": [
+                "dmTBpJZUBYPHxHrJSQRrjZfRJBHA~dHBIU@"
+              ],
+              "pathLength": 3,
+              "multiplicity": "d",
+              "coupling": 4.01
+            }
+          ],
+          "multiplicity": "d"
+        }
+      ]
+    }
+  ],
+  "status": "ok"
+}

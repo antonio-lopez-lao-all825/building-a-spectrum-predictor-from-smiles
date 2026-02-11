@@ -1,0 +1,65 @@
+{
+  "molfile": "\nActelion Java MolfileCreator 1.0\n\n  6  5  0  0  0  0  0  0  0  0999 V2000\n   -0.8708    0.0625    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    0.5667    0.0625    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.5833   -1.1667    0.0000 Cl  0  0  0  0  0  0  0  0  0  0  0  0\n   -1.5958    1.3000    0.0000 Cl  0  0  0  0  0  0  0  0  0  0  0  0\n    1.2792    1.3000    0.0000 Cl  0  0  0  0  0  0  0  0  0  0  0  0\n    0.9292   -0.5563    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n  2  1  2  0  0  0  0\n  3  1  1  0  0  0  0\n  4  1  1  0  0  0  0\n  5  2  1  0  0  0  0\n  2  6  1  0  0  0  0\nM  END\n",
+  "diaIDs": [
+    "gJPLADJHLPdwS@LRTGzQHxUP",
+    "gJPLADZHLPdmM@LRTGzQHxUP",
+    "gJPLADJHLPdwSBJX`hOtbCpfuP",
+    "gJPLADJHLPdwSBIX`hOtbCpfuP",
+    "gJPLADZHLPdmM@LPTGzQAxSZh",
+    "gGPBALjHLQXaInihA~dPHeT"
+  ],
+  "nucleus": "1H",
+  "signals": [
+    {
+      "id": "6ed2cf14-305e-4e77-84c1-37f113c25a34",
+      "atoms": [
+        5
+      ],
+      "diaIDs": [
+        "gGPBALjHLQXaInihA~dPHeT"
+      ],
+      "nbAtoms": 1,
+      "delta": 6.834,
+      "js": []
+    }
+  ],
+  "joinedSignals": [
+    {
+      "id": "ebaba274-d844-4ef6-84a6-70faa7b907d8",
+      "nbAtoms": 1,
+      "delta": 6.834,
+      "diaIDs": [
+        "gGPBALjHLQXaInihA~dPHeT"
+      ],
+      "atoms": [
+        5
+      ],
+      "js": [],
+      "multiplicity": "s"
+    }
+  ],
+  "ranges": [
+    {
+      "id": "98b015b5-ffe3-4e35-bfc7-6439b518152d",
+      "from": 6.784,
+      "to": 6.8839999999999995,
+      "integration": 1,
+      "signals": [
+        {
+          "id": "ebaba274-d844-4ef6-84a6-70faa7b907d8",
+          "nbAtoms": 1,
+          "delta": 6.834,
+          "diaIDs": [
+            "gGPBALjHLQXaInihA~dPHeT"
+          ],
+          "atoms": [
+            5
+          ],
+          "js": [],
+          "multiplicity": "s"
+        }
+      ]
+    }
+  ],
+  "status": "ok"
+}

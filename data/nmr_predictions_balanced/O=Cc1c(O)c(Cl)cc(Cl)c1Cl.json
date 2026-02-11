@@ -1,0 +1,120 @@
+{
+  "molfile": "\nActelion Java MolfileCreator 1.0\n\n 15 15  0  0  0  0  0  0  0  0999 V2000\n    5.2737   -2.8191    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    5.2737   -4.4312    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    3.8723   -2.0171    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    3.8723   -5.2332    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    2.4870   -2.8191    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    2.4870   -4.4312    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    6.6589   -2.0010    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    8.0523   -2.8030    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n    6.6671   -5.2332    0.0000 Cl  0  0  0  0  0  0  0  0  0  0  0  0\n    1.1018   -2.0253    0.0000 Cl  0  0  0  0  0  0  0  0  0  0  0  0\n    3.8723   -6.8372    0.0000 Cl  0  0  0  0  0  0  0  0  0  0  0  0\n    3.8723   -0.4131    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n    1.7944   -4.8363    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n    6.6548   -1.1909    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n    2.7381    0.7210    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n  2  1  1  0  0  0  0\n  3  1  2  0  0  0  0\n  4  2  2  0  0  0  0\n  5  3  1  0  0  0  0\n  6  5  2  0  0  0  0\n  7  1  1  0  0  0  0\n  8  7  2  0  0  0  0\n  9  2  1  0  0  0  0\n 10  5  1  0  0  0  0\n 11  4  1  0  0  0  0\n 12  3  1  0  0  0  0\n  6  4  1  0  0  0  0\n  6 13  1  0  0  0  0\n  7 14  1  0  0  0  0\n 12 15  1  0  0  0  0\nM  END\n",
+  "diaIDs": [
+    "dcLDpATHahcXcHhhhhktpEDL@CDIP_iBHxUP",
+    "dcLDpITH`hcXaIf[UXXHHf@AbHhOtaH\\Jh",
+    "dcLDpITH`hcXaIf[UXXHHf@AbFhOtaF\\Jh",
+    "dcLDpEtH`hbXaIf^U[hHBi@AbHhOtaH\\Jh",
+    "dcLDpBtHbXaXaIf^U[hHBi@AbHhOtaH\\Jh",
+    "dcLDpEtHbhchaIef}XXBHi@AbDhOtaD\\Jh",
+    "dcLDpAdHahcXcHhhheGrpQCD@CDEP_iBDxUP",
+    "dcLDpITH`hcXaIf[UXXHHf@AbEhOtaE_Jh",
+    "dcLDpITH`hcXaIf[UXXHHf@Ab@hOta@|ImT",
+    "dcLDpBtHbXaXaIf^U[hHBi@Ab@hOta@|ImT",
+    "dcLDpEtH`hbXaIf^U[hHBi@Ab@hOta@|ImT",
+    "dcLDpITH`hcXaIf[UXXHHf@AbIhOtaI_Jh",
+    "dklDHELIdhah`XaIf[o~fBHbd@GzP`HeT",
+    "dklDHDDIehaX`xaInYnyvXHbH@GzP`HeT",
+    "dklDHHtIfhaX`xaIYfu^f``bX@GzP`HeT"
+  ],
+  "nucleus": "1H",
+  "signals": [
+    {
+      "id": "ecd2e425-7b16-4828-b6d6-928ddecb2b04",
+      "atoms": [
+        12
+      ],
+      "diaIDs": [
+        "dklDHELIdhah`XaIf[o~fBHbd@GzP`HeT"
+      ],
+      "nbAtoms": 1,
+      "delta": 7.67,
+      "js": []
+    },
+    {
+      "id": "d2e4257b-1668-4836-9692-8ddecb2b0450",
+      "atoms": [
+        13
+      ],
+      "diaIDs": [
+        "dklDHDDIehaX`xaInYnyvXHbH@GzP`HeT"
+      ],
+      "nbAtoms": 1,
+      "delta": 10.035,
+      "js": []
+    }
+  ],
+  "joinedSignals": [
+    {
+      "id": "cb69055c-dd2c-4020-acc0-178c3c5bccfe",
+      "nbAtoms": 1,
+      "delta": 7.67,
+      "diaIDs": [
+        "dklDHELIdhah`XaIf[o~fBHbd@GzP`HeT"
+      ],
+      "atoms": [
+        12
+      ],
+      "js": [],
+      "multiplicity": "s"
+    },
+    {
+      "id": "c13dd5eb-465b-4e3f-b946-54b80ffbd444",
+      "nbAtoms": 1,
+      "delta": 10.035,
+      "diaIDs": [
+        "dklDHDDIehaX`xaInYnyvXHbH@GzP`HeT"
+      ],
+      "atoms": [
+        13
+      ],
+      "js": [],
+      "multiplicity": "s"
+    }
+  ],
+  "ranges": [
+    {
+      "id": "83a5298e-4eb0-417f-88aa-31a81b9a31f7",
+      "from": 7.62,
+      "to": 7.72,
+      "integration": 1,
+      "signals": [
+        {
+          "id": "cb69055c-dd2c-4020-acc0-178c3c5bccfe",
+          "nbAtoms": 1,
+          "delta": 7.67,
+          "diaIDs": [
+            "dklDHELIdhah`XaIf[o~fBHbd@GzP`HeT"
+          ],
+          "atoms": [
+            12
+          ],
+          "js": [],
+          "multiplicity": "s"
+        }
+      ]
+    },
+    {
+      "id": "1932ca05-aa5b-43f6-a0c6-4f7200485048",
+      "from": 9.985,
+      "to": 10.085,
+      "integration": 1,
+      "signals": [
+        {
+          "id": "c13dd5eb-465b-4e3f-b946-54b80ffbd444",
+          "nbAtoms": 1,
+          "delta": 10.035,
+          "diaIDs": [
+            "dklDHDDIehaX`xaInYnyvXHbH@GzP`HeT"
+          ],
+          "atoms": [
+            13
+          ],
+          "js": [],
+          "multiplicity": "s"
+        }
+      ]
+    }
+  ],
+  "status": "ok"
+}

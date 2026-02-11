@@ -1,0 +1,67 @@
+{
+  "molfile": "\nActelion Java MolfileCreator 1.0\n\n  8  7  0  0  0  0  0  0  0  0999 V2000\n    3.3582   -3.3500    0.0000 C   0  0  0  0  0  0  0  0  0  1  0  0\n    1.7444   -3.3500    0.0000 C   0  0  0  0  0  0  0  0  0  2  0  0\n    4.1652   -4.7438    0.0000 O   0  0  0  0  0  0  0  0  0  3  0  0\n    4.1652   -1.9400    0.0000 O   0  0  0  0  0  0  0  0  0  4  0  0\n    0.9374   -1.9400    0.0000 Cl  0  0  0  0  0  0  0  0  0  5  0  0\n    0.9374   -4.7438    0.0000 Cl  0  0  0  0  0  0  0  0  0  6  0  0\n    2.1478   -4.0469    0.0000 H   0  0  0  0  0  0  0  0  0  7  0  0\n    5.7213   -5.1588    0.0000 H   0  0  0  0  0  0  0  0  0  8  0  0\n  2  1  1  0  0  0  0\n  3  1  1  0  0  0  0\n  4  1  2  0  0  0  0\n  5  2  1  0  0  0  0\n  6  2  1  0  0  0  0\n  2  7  1  1  0  0  0\n  3  8  1  0  0  0  0\nM  END\n",
+  "diaIDs": [
+    "gGPdCQDJHR[jf@XfhOtbYpj`",
+    "gGPdCQDJHR[jf@XdhOtbQpj`",
+    "gGPdCQDJHR[ji@XahOtbE|j`",
+    "gGPdCQDJHR[jf@XahOtbE|j`",
+    "gGPdCQDJHR[jfdhCDEA~dP^Dvj@",
+    "gGPdCQDJHR[jfdhCDEA~dP^Dvj@",
+    "gNplJqLjHtQdTaeTpC}H`QJh",
+    "gNplIaLvH\\PdmuMPC}H`QJh"
+  ],
+  "nucleus": "1H",
+  "signals": [
+    {
+      "id": "0cea6e78-9091-440b-94a5-4ff5bdfb931b",
+      "atoms": [
+        6
+      ],
+      "diaIDs": [
+        "gNplJqLjHtQdTaeTpC}H`QJh"
+      ],
+      "nbAtoms": 1,
+      "delta": 6.077,
+      "js": []
+    }
+  ],
+  "joinedSignals": [
+    {
+      "id": "fb6f7ef8-b84d-42cc-8cf0-67fbebddab86",
+      "nbAtoms": 1,
+      "delta": 6.077,
+      "diaIDs": [
+        "gNplJqLjHtQdTaeTpC}H`QJh"
+      ],
+      "atoms": [
+        6
+      ],
+      "js": [],
+      "multiplicity": "s"
+    }
+  ],
+  "ranges": [
+    {
+      "id": "e4c592f5-f7b5-4e9e-95aa-643da8713248",
+      "from": 6.027,
+      "to": 6.127,
+      "integration": 1,
+      "signals": [
+        {
+          "id": "fb6f7ef8-b84d-42cc-8cf0-67fbebddab86",
+          "nbAtoms": 1,
+          "delta": 6.077,
+          "diaIDs": [
+            "gNplJqLjHtQdTaeTpC}H`QJh"
+          ],
+          "atoms": [
+            6
+          ],
+          "js": [],
+          "multiplicity": "s"
+        }
+      ]
+    }
+  ],
+  "status": "ok"
+}

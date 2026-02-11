@@ -1,0 +1,173 @@
+{
+  "molfile": "\nActelion Java MolfileCreator 1.0\n\n  8  8  0  0  0  0  0  0  0  0999 V2000\n    0.7500   -1.0323    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n    1.2135    0.3943    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.2135    0.3943    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.7500   -1.0323    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    0.0000    1.2760    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    1.2683   -1.7456    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.2683   -1.7456    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n    0.0000    2.1577    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n  1  2  1  0  0  0  0\n  1  4  1  0  0  0  0\n  2  5  2  0  0  0  0\n  3  4  2  0  0  0  0\n  3  5  1  0  0  0  0\n  1  6  1  0  0  0  0\n  4  7  1  0  0  0  0\n  5  8  1  0  0  0  0\nM  END\n",
+  "diaIDs": [
+    "gK\\@ABeKcRpCDEA~dPKeT",
+    "gK\\@ABeKcMHCDEA~dPKeT",
+    "gK\\@AbeKcKPCDEA~dPKeT",
+    "gK\\@ABeKcMHCDuA~dSNET",
+    "gK\\@ABeKcMHCDUA~dQNET",
+    "gF|HHjIeIeMjV@_iDBIU@",
+    "gF|HEjIeIeMfi@_iDBIU@",
+    "gF|HEbIeIeMff@_iDBIU@"
+  ],
+  "nucleus": "1H",
+  "signals": [
+    {
+      "id": "671f3acf-6c01-4d44-9d66-bfc38808c383",
+      "atoms": [
+        6
+      ],
+      "diaIDs": [
+        "gF|HEjIeIeMfi@_iDBIU@"
+      ],
+      "nbAtoms": 1,
+      "delta": 8.689,
+      "js": [
+        {
+          "coupling": 1.948,
+          "atoms": [
+            7
+          ],
+          "diaIDs": [
+            "gF|HEbIeIeMff@_iDBIU@"
+          ],
+          "multiplicity": "d",
+          "pathLength": 4
+        }
+      ]
+    },
+    {
+      "id": "1f3acf6c-015d-445d-a6bf-c38808c38351",
+      "atoms": [
+        7
+      ],
+      "diaIDs": [
+        "gF|HEbIeIeMff@_iDBIU@"
+      ],
+      "nbAtoms": 1,
+      "delta": 8.18,
+      "js": [
+        {
+          "coupling": 1.948,
+          "atoms": [
+            6
+          ],
+          "diaIDs": [
+            "gF|HEjIeIeMfi@_iDBIU@"
+          ],
+          "multiplicity": "d",
+          "pathLength": 4
+        }
+      ]
+    }
+  ],
+  "joinedSignals": [
+    {
+      "id": "fe805305-9d9a-4621-aa31-e13d0403fc2e",
+      "nbAtoms": 1,
+      "delta": 8.18,
+      "diaIDs": [
+        "gF|HEbIeIeMff@_iDBIU@"
+      ],
+      "atoms": [
+        7
+      ],
+      "js": [
+        {
+          "diaIDs": [
+            "gF|HEjIeIeMfi@_iDBIU@"
+          ],
+          "pathLength": 4,
+          "multiplicity": "d",
+          "coupling": 1.948
+        }
+      ],
+      "multiplicity": "d"
+    },
+    {
+      "id": "73cca309-9794-44a5-a71c-ae4a834acd5e",
+      "nbAtoms": 1,
+      "delta": 8.689,
+      "diaIDs": [
+        "gF|HEjIeIeMfi@_iDBIU@"
+      ],
+      "atoms": [
+        6
+      ],
+      "js": [
+        {
+          "diaIDs": [
+            "gF|HEbIeIeMff@_iDBIU@"
+          ],
+          "pathLength": 4,
+          "multiplicity": "d",
+          "coupling": 1.948
+        }
+      ],
+      "multiplicity": "d"
+    }
+  ],
+  "ranges": [
+    {
+      "id": "7e67290d-c944-458b-9f51-0b45cd782680",
+      "from": 8.127565,
+      "to": 8.232434999999999,
+      "integration": 1,
+      "signals": [
+        {
+          "id": "fe805305-9d9a-4621-aa31-e13d0403fc2e",
+          "nbAtoms": 1,
+          "delta": 8.18,
+          "diaIDs": [
+            "gF|HEbIeIeMff@_iDBIU@"
+          ],
+          "atoms": [
+            7
+          ],
+          "js": [
+            {
+              "diaIDs": [
+                "gF|HEjIeIeMfi@_iDBIU@"
+              ],
+              "pathLength": 4,
+              "multiplicity": "d",
+              "coupling": 1.948
+            }
+          ],
+          "multiplicity": "d"
+        }
+      ]
+    },
+    {
+      "id": "9544ae04-2860-4205-94bd-6d2790b60414",
+      "from": 8.636565000000001,
+      "to": 8.741435,
+      "integration": 1,
+      "signals": [
+        {
+          "id": "73cca309-9794-44a5-a71c-ae4a834acd5e",
+          "nbAtoms": 1,
+          "delta": 8.689,
+          "diaIDs": [
+            "gF|HEjIeIeMfi@_iDBIU@"
+          ],
+          "atoms": [
+            6
+          ],
+          "js": [
+            {
+              "diaIDs": [
+                "gF|HEbIeIeMff@_iDBIU@"
+              ],
+              "pathLength": 4,
+              "multiplicity": "d",
+              "coupling": 1.948
+            }
+          ],
+          "multiplicity": "d"
+        }
+      ]
+    }
+  ],
+  "status": "ok"
+}

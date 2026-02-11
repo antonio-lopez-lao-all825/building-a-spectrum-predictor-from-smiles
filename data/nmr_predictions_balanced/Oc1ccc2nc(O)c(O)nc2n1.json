@@ -1,0 +1,183 @@
+{
+  "molfile": "\nActelion Java MolfileCreator 1.0\n\n 18 19  0  0  0  0  0  0  0  0999 V2000\n    2.5067   -0.8866    0.0000 N   0  0  0  0  0  0  0  0  0  1  0  0\n    1.1275   -1.6858    0.0000 C   0  0  0  0  0  0  0  0  0  2  0  0\n    3.8859   -1.6858    0.0000 C   0  0  0  0  0  0  0  0  0  3  0  0\n    3.8859   -3.2838    0.0000 C   0  0  0  0  0  0  0  0  0  4  0  0\n    2.5067   -4.0830    0.0000 N   0  0  0  0  0  0  0  0  0  5  0  0\n   -0.2299   -0.8977    0.0000 N   0  0  0  0  0  0  0  0  0  6  0  0\n    1.1275   -3.2838    0.0000 C   0  0  0  0  0  0  0  0  0  7  0  0\n   -1.5980   -1.7076    0.0000 C   0  0  0  0  0  0  0  0  0  8  0  0\n    5.2541   -0.8977    0.0000 O   0  0  0  0  0  0  0  0  0  9  0  0\n    5.2541   -4.0830    0.0000 O   0  0  0  0  0  0  0  0  0 10  0  0\n   -0.2299   -4.0719    0.0000 C   0  0  0  0  0  0  0  0  0 11  0  0\n   -1.5980   -3.2838    0.0000 C   0  0  0  0  0  0  0  0  0 12  0  0\n   -2.9554   -0.9195    0.0000 O   0  0  0  0  0  0  0  0  0 13  0  0\n    5.6643    0.6271    0.0000 H   0  0  0  0  0  0  0  0  0 14  0  0\n    6.7866   -3.6806    0.0000 H   0  0  0  0  0  0  0  0  0 15  0  0\n   -0.2245   -4.8601    0.0000 H   0  0  0  0  0  0  0  0  0 16  0  0\n   -2.2821   -3.6779    0.0000 H   0  0  0  0  0  0  0  0  0 17  0  0\n   -4.4725   -1.3220    0.0000 H   0  0  0  0  0  0  0  0  0 18  0  0\n  2  1  2  0  0  0  0\n  3  1  1  0  0  0  0\n  4  3  2  0  0  0  0\n  5  4  1  0  0  0  0\n  6  2  1  0  0  0  0\n  7  2  1  0  0  0  0\n  8  6  2  0  0  0  0\n  9  3  1  0  0  0  0\n 10  4  1  0  0  0  0\n 11  7  1  0  0  0  0\n 12 11  2  0  0  0  0\n 13  8  1  0  0  0  0\n  7  5  2  0  0  0  0\n  8 12  1  0  0  0  0\n  9 14  1  0  0  0  0\n 10 15  1  0  0  0  0\n 11 16  1  0  0  0  0\n 12 17  1  0  0  0  0\n 13 18  1  0  0  0  0\nM  END\n",
+  "diaIDs": [
+    "dk_L@D[`k\\bbTTJTXUN@`@`@AbDhOtaDWJh",
+    "dk_L@D[`k\\bbTTJTXUN@`@`@AbBhOtaB\\Jh",
+    "dk_L@D[`k\\bbTTJTXUN@`@`@AbHhOtaH\\Jh",
+    "dk_L@DZPh|bbTTJV[ev@`@H@AbHhOtaH\\Jh",
+    "dk_L@DZPh|bbTTJV[ev@`@H@AbDhOtaDWJh",
+    "dk_L@D[`k\\bbTTJTXUN@`@`@AbNhOtaNWJh",
+    "dk_L@DZPh|bbTTJV[ev@`@H@AbBhOtaB\\Jh",
+    "dk_L@DZPT|bbRfRakiv@@BH@AbHhOtaH\\Jh",
+    "dk_L@D[`k\\bbTTJTXUN@`@`@Ab@hOta@_Jh",
+    "dk_L@DZPh|bbTTJV[ev@`@H@Ab@hOta@_Jh",
+    "dk_L@D[`k\\bbTTJTXUN@`@`@AbEhOtaE\\Jh",
+    "dk_L@DZPT|bbRfRakiv@@BH@AbLhOtaL\\Jh",
+    "dk_L@DZPT|bbRfRakiv@@BH@Ab@hOta@_Jh",
+    "dgL`LxXXpf\\bTRbaRgSmtA@A@@C}HPDRj@",
+    "dgL`LyXZpf\\bTRbaRwCitA@@P@C}HPDRj@",
+    "dgL`BFUvpf\\bbbRbT[RIp@@TP@C}HPDRj@",
+    "dgL`JFRNpfTfYuUVy]``@B`@GzP`HeT",
+    "dgL`LyXvpf\\bTRTrTKBit@@DP@C}HPDRj@"
+  ],
+  "nucleus": "1H",
+  "signals": [
+    {
+      "id": "c8b05da0-8bd7-49be-864b-db2afbed29d4",
+      "atoms": [
+        15
+      ],
+      "diaIDs": [
+        "dgL`BFUvpf\\bbbRbT[RIp@@TP@C}HPDRj@"
+      ],
+      "nbAtoms": 1,
+      "delta": 8.762,
+      "js": [
+        {
+          "coupling": 8.804,
+          "atoms": [
+            16
+          ],
+          "diaIDs": [
+            "dgL`JFRNpfTfYuUVy]``@B`@GzP`HeT"
+          ],
+          "multiplicity": "d",
+          "pathLength": 3
+        }
+      ]
+    },
+    {
+      "id": "b05da08b-d789-4ec6-8bdb-2afbed29d492",
+      "atoms": [
+        16
+      ],
+      "diaIDs": [
+        "dgL`JFRNpfTfYuUVy]``@B`@GzP`HeT"
+      ],
+      "nbAtoms": 1,
+      "delta": 6.893,
+      "js": [
+        {
+          "coupling": 8.804,
+          "atoms": [
+            15
+          ],
+          "diaIDs": [
+            "dgL`BFUvpf\\bbbRbT[RIp@@TP@C}HPDRj@"
+          ],
+          "multiplicity": "d",
+          "pathLength": 3
+        }
+      ]
+    }
+  ],
+  "joinedSignals": [
+    {
+      "id": "622aca60-afc0-49b7-9bb4-6983f2cf708c",
+      "nbAtoms": 1,
+      "delta": 6.893,
+      "diaIDs": [
+        "dgL`JFRNpfTfYuUVy]``@B`@GzP`HeT"
+      ],
+      "atoms": [
+        16
+      ],
+      "js": [
+        {
+          "diaIDs": [
+            "dgL`BFUvpf\\bbbRbT[RIp@@TP@C}HPDRj@"
+          ],
+          "pathLength": 3,
+          "multiplicity": "d",
+          "coupling": 8.804
+        }
+      ],
+      "multiplicity": "d"
+    },
+    {
+      "id": "095d3909-b63c-405d-a7cc-ea3aebcb75fa",
+      "nbAtoms": 1,
+      "delta": 8.762,
+      "diaIDs": [
+        "dgL`BFUvpf\\bbbRbT[RIp@@TP@C}HPDRj@"
+      ],
+      "atoms": [
+        15
+      ],
+      "js": [
+        {
+          "diaIDs": [
+            "dgL`JFRNpfTfYuUVy]``@B`@GzP`HeT"
+          ],
+          "pathLength": 3,
+          "multiplicity": "d",
+          "coupling": 8.804
+        }
+      ],
+      "multiplicity": "d"
+    }
+  ],
+  "ranges": [
+    {
+      "id": "06c34320-ced3-45c9-bd4e-95d9f88e2d7a",
+      "from": 6.831995,
+      "to": 6.9540049999999995,
+      "integration": 1,
+      "signals": [
+        {
+          "id": "622aca60-afc0-49b7-9bb4-6983f2cf708c",
+          "nbAtoms": 1,
+          "delta": 6.893,
+          "diaIDs": [
+            "dgL`JFRNpfTfYuUVy]``@B`@GzP`HeT"
+          ],
+          "atoms": [
+            16
+          ],
+          "js": [
+            {
+              "diaIDs": [
+                "dgL`BFUvpf\\bbbRbT[RIp@@TP@C}HPDRj@"
+              ],
+              "pathLength": 3,
+              "multiplicity": "d",
+              "coupling": 8.804
+            }
+          ],
+          "multiplicity": "d"
+        }
+      ]
+    },
+    {
+      "id": "5de0e601-30ee-4f5a-b89d-8fd46a6c1a5d",
+      "from": 8.700995,
+      "to": 8.823005,
+      "integration": 1,
+      "signals": [
+        {
+          "id": "095d3909-b63c-405d-a7cc-ea3aebcb75fa",
+          "nbAtoms": 1,
+          "delta": 8.762,
+          "diaIDs": [
+            "dgL`BFUvpf\\bbbRbT[RIp@@TP@C}HPDRj@"
+          ],
+          "atoms": [
+            15
+          ],
+          "js": [
+            {
+              "diaIDs": [
+                "dgL`JFRNpfTfYuUVy]``@B`@GzP`HeT"
+              ],
+              "pathLength": 3,
+              "multiplicity": "d",
+              "coupling": 8.804
+            }
+          ],
+          "multiplicity": "d"
+        }
+      ]
+    }
+  ],
+  "status": "ok"
+}

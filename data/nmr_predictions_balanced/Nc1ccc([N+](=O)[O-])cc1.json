@@ -1,0 +1,385 @@
+{
+  "molfile": "\nActelion Java MolfileCreator 1.0\n\n 16 16  0  0  0  0  0  0  0  0999 V2000\n   -0.0082   -4.4777    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.0082   -2.6866    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.5592   -1.7911    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.5592    0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.0080    0.8955    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.0080    2.6866    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.5592    3.5821    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n    1.5429    3.5821    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n    1.5429    0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    1.5429   -1.7911    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.0940   -5.1045    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n    1.0775   -5.1045    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.3347   -2.2388    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.3348    0.4478    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n    2.3184    0.4478    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n    2.3185   -2.2388    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n  2  1  1  0  0  0  0\n  2  3  2  0  0  0  0\n  2 10  1  0  0  0  0\n  3  4  1  0  0  0  0\n  4  5  2  0  0  0  0\n  5  6  1  0  0  0  0\n  5  9  1  0  0  0  0\n  6  7  1  0  0  0  0\n  6  8  2  0  0  0  0\n  9 10  2  0  0  0  0\n  1 11  1  0  0  0  0\n  1 12  1  0  0  0  0\n  3 13  1  0  0  0  0\n  4 14  1  0  0  0  0\n  9 15  1  0  0  0  0\n 10 16  1  0  0  0  0\nM  CHG  2   6   1   7  -1\nM  END\n",
+  "diaIDs": [
+    "deUDAHdDbTyInU~Eh@H@FHf`RDe\\j`",
+    "deUDAHdDbTyInU~Eh@H@FHF`RDEpj`",
+    "deUDAHdDbTyInU~Eh@H@FHZ`RDYpj`",
+    "deUDAHdDbTyInU~Eh@H@FHJ`RDIpj`",
+    "deUDAHdDbTyInU~Eh@H@FHr`RDqpj`",
+    "deUDAHdDbTyInU~Eh@H@FHb`RDa\\j`",
+    "deUDAHdDCheInU~FX@H@FHB`RDA|j`",
+    "deUDAHdDbTyInU~Eh@H@FHB`RDA|j`",
+    "deUDAHdDbTyInU~Eh@H@FHJ`RDIpj`",
+    "deUDAHdDbTyInU~Eh@H@FHZ`RDYpj`",
+    "dmuDaHFUBYFUyIYWYnh@I`@_iB@bUP",
+    "dmuDaHFUBYFUyIYWYnh@I`@_iB@bUP",
+    "dmuDaBFUBYFUyIf]yn``I`@_iB@bUP",
+    "dmuDaBWaBYJQyIfVUi``X`@_iB@bUP",
+    "dmuDaBWaBYJQyIfVUi``X`@_iB@bUP",
+    "dmuDaBFUBYFUyIf]yn``I`@_iB@bUP"
+  ],
+  "nucleus": "1H",
+  "signals": [
+    {
+      "id": "baf79dee-9c9d-4242-98a5-1308700d872d",
+      "atoms": [
+        12
+      ],
+      "diaIDs": [
+        "dmuDaBFUBYFUyIf]yn``I`@_iB@bUP"
+      ],
+      "nbAtoms": 1,
+      "delta": 6.912,
+      "js": [
+        {
+          "coupling": 7.898,
+          "atoms": [
+            13
+          ],
+          "diaIDs": [
+            "dmuDaBWaBYJQyIfVUi``X`@_iB@bUP"
+          ],
+          "multiplicity": "d",
+          "pathLength": 3
+        },
+        {
+          "coupling": 1.753,
+          "atoms": [
+            15
+          ],
+          "diaIDs": [
+            "dmuDaBFUBYFUyIf]yn``I`@_iB@bUP"
+          ],
+          "multiplicity": "d",
+          "pathLength": 4
+        },
+        {
+          "coupling": 0.55,
+          "atoms": [
+            14
+          ],
+          "diaIDs": [
+            "dmuDaBWaBYJQyIfVUi``X`@_iB@bUP"
+          ],
+          "multiplicity": "d",
+          "pathLength": 5
+        }
+      ]
+    },
+    {
+      "id": "f79dee9c-9dc2-4298-a513-08700d872da2",
+      "atoms": [
+        13
+      ],
+      "diaIDs": [
+        "dmuDaBWaBYJQyIfVUi``X`@_iB@bUP"
+      ],
+      "nbAtoms": 1,
+      "delta": 8.078,
+      "js": [
+        {
+          "coupling": 7.898,
+          "atoms": [
+            12
+          ],
+          "diaIDs": [
+            "dmuDaBFUBYFUyIf]yn``I`@_iB@bUP"
+          ],
+          "multiplicity": "d",
+          "pathLength": 3
+        },
+        {
+          "coupling": 1.817,
+          "atoms": [
+            14
+          ],
+          "diaIDs": [
+            "dmuDaBWaBYJQyIfVUi``X`@_iB@bUP"
+          ],
+          "multiplicity": "d",
+          "pathLength": 4
+        },
+        {
+          "coupling": 0.55,
+          "atoms": [
+            15
+          ],
+          "diaIDs": [
+            "dmuDaBFUBYFUyIf]yn``I`@_iB@bUP"
+          ],
+          "multiplicity": "d",
+          "pathLength": 5
+        }
+      ]
+    },
+    {
+      "id": "9dee9c9d-c242-48a5-9308-700d872da2ef",
+      "atoms": [
+        14
+      ],
+      "diaIDs": [
+        "dmuDaBWaBYJQyIfVUi``X`@_iB@bUP"
+      ],
+      "nbAtoms": 1,
+      "delta": 8.077,
+      "js": [
+        {
+          "coupling": 7.897,
+          "atoms": [
+            15
+          ],
+          "diaIDs": [
+            "dmuDaBFUBYFUyIf]yn``I`@_iB@bUP"
+          ],
+          "multiplicity": "d",
+          "pathLength": 3
+        },
+        {
+          "coupling": 1.817,
+          "atoms": [
+            13
+          ],
+          "diaIDs": [
+            "dmuDaBWaBYJQyIfVUi``X`@_iB@bUP"
+          ],
+          "multiplicity": "d",
+          "pathLength": 4
+        },
+        {
+          "coupling": 0.55,
+          "atoms": [
+            12
+          ],
+          "diaIDs": [
+            "dmuDaBFUBYFUyIf]yn``I`@_iB@bUP"
+          ],
+          "multiplicity": "d",
+          "pathLength": 5
+        }
+      ]
+    },
+    {
+      "id": "ee9c9dc2-4298-4513-8870-0d872da2ef92",
+      "atoms": [
+        15
+      ],
+      "diaIDs": [
+        "dmuDaBFUBYFUyIf]yn``I`@_iB@bUP"
+      ],
+      "nbAtoms": 1,
+      "delta": 6.912,
+      "js": [
+        {
+          "coupling": 7.897,
+          "atoms": [
+            14
+          ],
+          "diaIDs": [
+            "dmuDaBWaBYJQyIfVUi``X`@_iB@bUP"
+          ],
+          "multiplicity": "d",
+          "pathLength": 3
+        },
+        {
+          "coupling": 1.753,
+          "atoms": [
+            12
+          ],
+          "diaIDs": [
+            "dmuDaBFUBYFUyIf]yn``I`@_iB@bUP"
+          ],
+          "multiplicity": "d",
+          "pathLength": 4
+        },
+        {
+          "coupling": 0.55,
+          "atoms": [
+            13
+          ],
+          "diaIDs": [
+            "dmuDaBWaBYJQyIfVUi``X`@_iB@bUP"
+          ],
+          "multiplicity": "d",
+          "pathLength": 5
+        }
+      ]
+    }
+  ],
+  "joinedSignals": [
+    {
+      "id": "e3721d9a-00f0-46a0-a06d-aea3658e7a6c",
+      "nbAtoms": 2,
+      "delta": 6.912,
+      "diaIDs": [
+        "dmuDaBFUBYFUyIf]yn``I`@_iB@bUP"
+      ],
+      "atoms": [
+        12,
+        15
+      ],
+      "js": [
+        {
+          "coupling": 7.8975,
+          "multiplicity": "d",
+          "diaIDs": [
+            "dmuDaBWaBYJQyIfVUi``X`@_iB@bUP"
+          ],
+          "pathLength": 3
+        },
+        {
+          "coupling": 1.753,
+          "multiplicity": "d",
+          "diaIDs": [
+            "dmuDaBFUBYFUyIf]yn``I`@_iB@bUP"
+          ],
+          "pathLength": 4
+        },
+        {
+          "coupling": 0.55,
+          "multiplicity": "d",
+          "diaIDs": [
+            "dmuDaBWaBYJQyIfVUi``X`@_iB@bUP"
+          ],
+          "pathLength": 5
+        }
+      ],
+      "multiplicity": "ddd"
+    },
+    {
+      "id": "200885c5-05d9-40cb-8a8c-5a34eb8482fa",
+      "nbAtoms": 2,
+      "delta": 8.0775,
+      "diaIDs": [
+        "dmuDaBWaBYJQyIfVUi``X`@_iB@bUP"
+      ],
+      "atoms": [
+        13,
+        14
+      ],
+      "js": [
+        {
+          "coupling": 7.8975,
+          "multiplicity": "d",
+          "diaIDs": [
+            "dmuDaBFUBYFUyIf]yn``I`@_iB@bUP"
+          ],
+          "pathLength": 3
+        },
+        {
+          "coupling": 1.817,
+          "multiplicity": "d",
+          "diaIDs": [
+            "dmuDaBWaBYJQyIfVUi``X`@_iB@bUP"
+          ],
+          "pathLength": 4
+        },
+        {
+          "coupling": 0.55,
+          "multiplicity": "d",
+          "diaIDs": [
+            "dmuDaBFUBYFUyIf]yn``I`@_iB@bUP"
+          ],
+          "pathLength": 5
+        }
+      ],
+      "multiplicity": "ddd"
+    }
+  ],
+  "ranges": [
+    {
+      "id": "661fbde5-a015-45fd-bf8a-ee7cad31ba9f",
+      "from": 6.849249375,
+      "to": 6.9747506249999995,
+      "integration": 2,
+      "signals": [
+        {
+          "id": "e3721d9a-00f0-46a0-a06d-aea3658e7a6c",
+          "nbAtoms": 2,
+          "delta": 6.912,
+          "diaIDs": [
+            "dmuDaBFUBYFUyIf]yn``I`@_iB@bUP"
+          ],
+          "atoms": [
+            12,
+            15
+          ],
+          "js": [
+            {
+              "coupling": 7.8975,
+              "multiplicity": "d",
+              "diaIDs": [
+                "dmuDaBWaBYJQyIfVUi``X`@_iB@bUP"
+              ],
+              "pathLength": 3
+            },
+            {
+              "coupling": 1.753,
+              "multiplicity": "d",
+              "diaIDs": [
+                "dmuDaBFUBYFUyIf]yn``I`@_iB@bUP"
+              ],
+              "pathLength": 4
+            },
+            {
+              "coupling": 0.55,
+              "multiplicity": "d",
+              "diaIDs": [
+                "dmuDaBWaBYJQyIfVUi``X`@_iB@bUP"
+              ],
+              "pathLength": 5
+            }
+          ],
+          "multiplicity": "ddd"
+        }
+      ]
+    },
+    {
+      "id": "74573868-e053-4bc2-8a93-b10a245b1701",
+      "from": 8.014669375,
+      "to": 8.140330625,
+      "integration": 2,
+      "signals": [
+        {
+          "id": "200885c5-05d9-40cb-8a8c-5a34eb8482fa",
+          "nbAtoms": 2,
+          "delta": 8.0775,
+          "diaIDs": [
+            "dmuDaBWaBYJQyIfVUi``X`@_iB@bUP"
+          ],
+          "atoms": [
+            13,
+            14
+          ],
+          "js": [
+            {
+              "coupling": 7.8975,
+              "multiplicity": "d",
+              "diaIDs": [
+                "dmuDaBFUBYFUyIf]yn``I`@_iB@bUP"
+              ],
+              "pathLength": 3
+            },
+            {
+              "coupling": 1.817,
+              "multiplicity": "d",
+              "diaIDs": [
+                "dmuDaBWaBYJQyIfVUi``X`@_iB@bUP"
+              ],
+              "pathLength": 4
+            },
+            {
+              "coupling": 0.55,
+              "multiplicity": "d",
+              "diaIDs": [
+                "dmuDaBFUBYFUyIf]yn``I`@_iB@bUP"
+              ],
+              "pathLength": 5
+            }
+          ],
+          "multiplicity": "ddd"
+        }
+      ]
+    }
+  ],
+  "status": "ok"
+}

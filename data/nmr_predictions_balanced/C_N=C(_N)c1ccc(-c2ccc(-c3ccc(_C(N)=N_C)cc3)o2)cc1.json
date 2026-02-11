@@ -1,0 +1,824 @@
+{
+  "molfile": "\nActelion Java MolfileCreator 1.0\n\n 45 47  0  0  0  0  0  0  0  0999 V2000\n   12.3236   -8.6520    0.0000 O   0  0  0  0  0  0  0  0  0  1  0  0\n   13.7777   -7.5887    0.0000 C   0  0  0  0  0  0  0  0  0  2  0  0\n   10.8604   -7.5887    0.0000 C   0  0  0  0  0  0  0  0  0  3  0  0\n   13.2233   -5.8891    0.0000 C   0  0  0  0  0  0  0  0  0  4  0  0\n   11.4238   -5.8891    0.0000 C   0  0  0  0  0  0  0  0  0  5  0  0\n   20.6211   -9.7971    0.0000 C   0  0  0  0  0  0  0  0  0  6  0  0\n    3.8170   -9.0337    0.0000 C   0  0  0  0  0  0  0  0  0  7  0  0\n    9.1063   -7.9612    0.0000 C   0  0  0  0  0  0  0  0  0  8  0  0\n   15.4954   -8.1521    0.0000 C   0  0  0  0  0  0  0  0  0  9  0  0\n    5.5711   -8.6793    0.0000 C   0  0  0  0  0  0  0  0  0 10  0  0\n   18.9035   -9.2518    0.0000 C   0  0  0  0  0  0  0  0  0 11  0  0\n   21.9571   -8.5975    0.0000 N   0  0  0  0  0  0  0  0  0 12  0  0\n    2.6174   -7.6886    0.0000 N   0  0  0  0  0  0  0  0  0 13  0  0\n    8.5338   -9.6608    0.0000 C   0  0  0  0  0  0  0  0  0 14  0  0\n   15.8498   -9.9062    0.0000 C   0  0  0  0  0  0  0  0  0 15  0  0\n    7.8886   -6.6072    0.0000 C   0  0  0  0  0  0  0  0  0 16  0  0\n   16.8041   -6.9343    0.0000 C   0  0  0  0  0  0  0  0  0 17  0  0\n   17.5675  -10.4696    0.0000 C   0  0  0  0  0  0  0  0  0 18  0  0\n    6.7708  -10.0333    0.0000 C   0  0  0  0  0  0  0  0  0 19  0  0\n   18.5218   -7.4796    0.0000 C   0  0  0  0  0  0  0  0  0 20  0  0\n    6.1437   -6.9797    0.0000 C   0  0  0  0  0  0  0  0  0 21  0  0\n   21.0028  -11.5693    0.0000 N   0  0  0  0  0  0  0  0  0 22  0  0\n    3.2445  -10.7422    0.0000 N   0  0  0  0  0  0  0  0  0 23  0  0\n   22.7113  -12.1146    0.0000 C   0  0  0  0  0  0  0  0  0 24  0  0\n    1.4814  -11.1058    0.0000 C   0  0  0  0  0  0  0  0  0 25  0  0\n   13.8458   -5.0394    0.0000 H   0  0  0  0  0  0  0  0  0 26  0  0\n   10.8058   -5.0394    0.0000 H   0  0  0  0  0  0  0  0  0 27  0  0\n   23.1519   -8.9875    0.0000 H   0  0  0  0  0  0  0  0  0 28  0  0\n   21.6974   -7.3677    0.0000 H   0  0  0  0  0  0  0  0  0 29  0  0\n    3.0130   -6.4906    0.0000 H   0  0  0  0  0  0  0  0  0 30  0  0\n    1.3821   -7.9450    0.0000 H   0  0  0  0  0  0  0  0  0 31  0  0\n    9.1290  -10.3243    0.0000 H   0  0  0  0  0  0  0  0  0 32  0  0\n   15.1682  -10.5015    0.0000 H   0  0  0  0  0  0  0  0  0 33  0  0\n    8.1522   -5.7439    0.0000 H   0  0  0  0  0  0  0  0  0 34  0  0\n   16.5996   -6.0528    0.0000 H   0  0  0  0  0  0  0  0  0 35  0  0\n   17.7583  -11.3601    0.0000 H   0  0  0  0  0  0  0  0  0 36  0  0\n    6.4891  -10.8966    0.0000 H   0  0  0  0  0  0  0  0  0 37  0  0\n   19.1897   -6.8662    0.0000 H   0  0  0  0  0  0  0  0  0 38  0  0\n    5.5575   -6.3162    0.0000 H   0  0  0  0  0  0  0  0  0 39  0  0\n   23.9073  -12.4963    0.0000 H   0  0  0  0  0  0  0  0  0 40  0  0\n   22.3296  -13.3105    0.0000 H   0  0  0  0  0  0  0  0  0 41  0  0\n   23.0930  -10.9186    0.0000 H   0  0  0  0  0  0  0  0  0 42  0  0\n    0.2473  -11.3603    0.0000 H   0  0  0  0  0  0  0  0  0 43  0  0\n    1.2269   -9.8717    0.0000 H   0  0  0  0  0  0  0  0  0 44  0  0\n    1.7360  -12.3399    0.0000 H   0  0  0  0  0  0  0  0  0 45  0  0\n  2  1  1  0  0  0  0\n  3  1  1  0  0  0  0\n  4  2  2  0  0  0  0\n  5  3  2  0  0  0  0\n  6 11  1  0  0  0  0\n  7 10  1  0  0  0  0\n  8  3  1  0  0  0  0\n  9  2  1  0  0  0  0\n 10 21  1  0  0  0  0\n 11 20  1  0  0  0  0\n 12  6  1  0  0  0  0\n 13  7  1  0  0  0  0\n 14  8  2  0  0  0  0\n 15  9  2  0  0  0  0\n 16  8  1  0  0  0  0\n 17  9  1  0  0  0  0\n 18 15  1  0  0  0  0\n 19 14  1  0  0  0  0\n 20 17  2  0  0  0  0\n 21 16  2  0  0  0  0\n 22  6  2  0  0  0  0\n 23  7  2  0  0  0  0\n 24 22  1  0  0  0  0\n 25 23  1  0  0  0  0\n  5  4  1  0  0  0  0\n 10 19  2  0  0  0  0\n 18 11  2  0  0  0  0\n  4 26  1  0  0  0  0\n  5 27  1  0  0  0  0\n 12 28  1  0  0  0  0\n 12 29  1  0  0  0  0\n 13 30  1  0  0  0  0\n 13 31  1  0  0  0  0\n 14 32  1  0  0  0  0\n 15 33  1  0  0  0  0\n 16 34  1  0  0  0  0\n 17 35  1  0  0  0  0\n 18 36  1  0  0  0  0\n 19 37  1  0  0  0  0\n 20 38  1  0  0  0  0\n 21 39  1  0  0  0  0\n 24 40  1  0  0  0  0\n 24 41  1  0  0  0  0\n 24 42  1  0  0  0  0\n 25 43  1  0  0  0  0\n 25 44  1  0  0  0  0\n 25 45  1  0  0  0  0\nM  END\n",
+  "diaIDs": [
+    "fi{I@@LejtBTsMvj~lsdX[s`uL`@@ELuP@PfKLPAP_iA@OeT",
+    "fi{I@@LejtBTsMvj~lsdX[s`uL`@@ELuP@PfKLPaP_iAHNET",
+    "fi{I@@LejtBTsMvj~lsdX[s`uL`@@ELuP@PfKLPaP_iAHNET",
+    "fi{I@@LejtBTs\\vj~lsxX[s`tt`@@ELuP@PfKLPqP_iALNET",
+    "fi{I@@LejtBTs\\vj~lsxX[s`tt`@@ELuP@PfKLPqP_iALNET",
+    "fi{I@@LejtBTsMvj~lsdX[s`uL`@@ELuP@PfKLPcP_iAHnET",
+    "fi{I@@LejtBTsMvj~lsdX[s`uL`@@ELuP@PfKLPcP_iAHnET",
+    "fi{I@@LejtBTsMvj~lsdX[s`uL`@@ELuP@PfKLPqP_iALNET",
+    "fi{I@@LejtBTsMvj~lsdX[s`uL`@@ELuP@PfKLPqP_iALNET",
+    "fi{I@@LejtBTsMvj~lsdX[s`uL`@@ELuP@PfKLP}P_iAONET",
+    "fi{I@@LejtBTsMvj~lsdX[s`uL`@@ELuP@PfKLP}P_iAONET",
+    "fi{I@@LejtBTsMvj~lvdX[s`uL`@@ERuP@QfKLPsP_iALkeT",
+    "fi{I@@LejtBTsMvj~lvdX[s`uL`@@ERuP@QfKLPsP_iALkeT",
+    "fi{I@@LejtBTsMvj~lsdX[s`uL`@@ELuP@PfKLPyP_iANNET",
+    "fi{I@@LejtBTsMvj~lsdX[s`uL`@@ELuP@PfKLPyP_iANNET",
+    "fi{I@@LejtBTsMvj~lsdX[s`uL`@@ELuP@PfKLPyP_iANNET",
+    "fi{I@@LejtBTsMvj~lsdX[s`uL`@@ELuP@PfKLPyP_iANNET",
+    "fi{I@@LejtBTsMvj~lsdX[s`uL`@@ELuP@PfKLPuP_iAMNET",
+    "fi{I@@LejtBTsMvj~lsdX[s`uL`@@ELuP@PfKLPuP_iAMNET",
+    "fi{I@@LejtBTsMvj~lsdX[s`uL`@@ELuP@PfKLPuP_iAMNET",
+    "fi{I@@LejtBTsMvj~lsdX[s`uL`@@ELuP@PfKLPuP_iAMNET",
+    "fi{I@@LejtBTsMvj~lsdX[s`uL`@@ELuP@PfKLPsP_iALkeT",
+    "fi{I@@LejtBTsMvj~lsdX[s`uL`@@ELuP@PfKLPsP_iALkeT",
+    "fi{I@@LejtBTsMvj~lsdX[s`uL`@@ELuP@PfKLP{P_iANnET",
+    "fi{I@@LejtBTsMvj~lsdX[s`uL`@@ELuP@PfKLP{P_iANnET",
+    "fegIB@LezL`IeIf^UYu^WlcMNBfZdH@@ajZ`@aLv_iA@HeT",
+    "fegIB@LezL`IeIf^UYu^WlcMNBfZdH@@ajZ`@aLv_iA@HeT",
+    "fegIB@HXzLpIeIY[WYWe]fRg^KVf`@ij@BZD@aBv_iA@HeT",
+    "fegIB@HXzLpIeIY[WYWe]fRg^KVf`@ij@BZD@aBv_iA@HeT",
+    "fegIB@HXzLpIeIY[WYWe]fRg^KVf`@ij@BZD@aBv_iA@HeT",
+    "fegIB@HXzLpIeIY[WYWe]fRg^KVf`@ij@BZD@aBv_iA@HeT",
+    "fegIB@KNzO`IeIfVU^_m]edmFKVBBRij@BZD@`tv_iA@HeT",
+    "fegIB@KNzO`IeIfVU^_m]edmFKVBBRij@BZD@`tv_iA@HeT",
+    "fegIB@KNzO`IeIfVU^_m]edmFKVBBRij@BZD@`tv_iA@HeT",
+    "fegIB@KNzO`IeIfVU^_m]edmFKVBBRij@BZD@`tv_iA@HeT",
+    "fegIB@NBzLpIgHhheDdYdmDeeDrSoEkA@qTu@AMB@Pr[Ot``DRj@",
+    "fegIB@NBzLpIgHhheDdYdmDeeDrSoEkA@qTu@AMB@Pr[Ot``DRj@",
+    "fegIB@NBzLpIgHhheDdYdmDeeDrSoEkA@qTu@AMB@Pr[Ot``DRj@",
+    "fegIB@NBzLpIgHhheDdYdmDeeDrSoEkA@qTu@AMB@Pr[Ot``DRj@",
+    "fegIB@DDzLpIeIVyWYWe]fRg^KVf`@ij@BZD@aBv_iA@HeT",
+    "fegIB@DDzLpIeIVyWYWe]fRg^KVf`@ij@BZD@aBv_iA@HeT",
+    "fegIB@DDzLpIeIVyWYWe]fRg^KVf`@ij@BZD@aBv_iA@HeT",
+    "fegIB@DDzLpIeIVyWYWe]fRg^KVf`@ij@BZD@aBv_iA@HeT",
+    "fegIB@DDzLpIeIVyWYWe]fRg^KVf`@ij@BZD@aBv_iA@HeT",
+    "fegIB@DDzLpIeIVyWYWe]fRg^KVf`@ij@BZD@aBv_iA@HeT"
+  ],
+  "nucleus": "1H",
+  "signals": [
+    {
+      "id": "4db62d81-feb0-4f59-8b0c-3af1fcdd8805",
+      "atoms": [
+        25
+      ],
+      "diaIDs": [
+        "fegIB@LezL`IeIf^UYu^WlcMNBfZdH@@ajZ`@aLv_iA@HeT"
+      ],
+      "nbAtoms": 1,
+      "delta": 6.976,
+      "js": [
+        {
+          "coupling": 3.425,
+          "atoms": [
+            26
+          ],
+          "diaIDs": [
+            "fegIB@LezL`IeIf^UYu^WlcMNBfZdH@@ajZ`@aLv_iA@HeT"
+          ],
+          "multiplicity": "d",
+          "pathLength": 3
+        }
+      ]
+    },
+    {
+      "id": "b62d81fe-b0df-494b-8c3a-f1fcdd88054f",
+      "atoms": [
+        26
+      ],
+      "diaIDs": [
+        "fegIB@LezL`IeIf^UYu^WlcMNBfZdH@@ajZ`@aLv_iA@HeT"
+      ],
+      "nbAtoms": 1,
+      "delta": 6.976,
+      "js": [
+        {
+          "coupling": 3.425,
+          "atoms": [
+            25
+          ],
+          "diaIDs": [
+            "fegIB@LezL`IeIf^UYu^WlcMNBfZdH@@ajZ`@aLv_iA@HeT"
+          ],
+          "multiplicity": "d",
+          "pathLength": 3
+        }
+      ]
+    },
+    {
+      "id": "2d81feb0-df59-4b0c-baf1-fcdd88054f3b",
+      "atoms": [
+        31
+      ],
+      "diaIDs": [
+        "fegIB@KNzO`IeIfVU^_m]edmFKVBBRij@BZD@`tv_iA@HeT"
+      ],
+      "nbAtoms": 1,
+      "delta": 7.608,
+      "js": [
+        {
+          "coupling": 8.767,
+          "atoms": [
+            36
+          ],
+          "diaIDs": [
+            "fegIB@NBzLpIgHhheDdYdmDeeDrSoEkA@qTu@AMB@Pr[Ot``DRj@"
+          ],
+          "multiplicity": "d",
+          "pathLength": 3
+        },
+        {
+          "coupling": 1.747,
+          "atoms": [
+            33
+          ],
+          "diaIDs": [
+            "fegIB@KNzO`IeIfVU^_m]edmFKVBBRij@BZD@`tv_iA@HeT"
+          ],
+          "multiplicity": "d",
+          "pathLength": 4
+        },
+        {
+          "coupling": 0.44,
+          "atoms": [
+            38
+          ],
+          "diaIDs": [
+            "fegIB@NBzLpIgHhheDdYdmDeeDrSoEkA@qTu@AMB@Pr[Ot``DRj@"
+          ],
+          "multiplicity": "d",
+          "pathLength": 5
+        }
+      ]
+    },
+    {
+      "id": "81feb0df-594b-4c3a-b1fc-dd88054f3bc6",
+      "atoms": [
+        32
+      ],
+      "diaIDs": [
+        "fegIB@KNzO`IeIfVU^_m]edmFKVBBRij@BZD@`tv_iA@HeT"
+      ],
+      "nbAtoms": 1,
+      "delta": 7.608,
+      "js": [
+        {
+          "coupling": 8.767,
+          "atoms": [
+            35
+          ],
+          "diaIDs": [
+            "fegIB@NBzLpIgHhheDdYdmDeeDrSoEkA@qTu@AMB@Pr[Ot``DRj@"
+          ],
+          "multiplicity": "d",
+          "pathLength": 3
+        },
+        {
+          "coupling": 1.747,
+          "atoms": [
+            34
+          ],
+          "diaIDs": [
+            "fegIB@KNzO`IeIfVU^_m]edmFKVBBRij@BZD@`tv_iA@HeT"
+          ],
+          "multiplicity": "d",
+          "pathLength": 4
+        },
+        {
+          "coupling": 0.44,
+          "atoms": [
+            37
+          ],
+          "diaIDs": [
+            "fegIB@NBzLpIgHhheDdYdmDeeDrSoEkA@qTu@AMB@Pr[Ot``DRj@"
+          ],
+          "multiplicity": "d",
+          "pathLength": 5
+        }
+      ]
+    },
+    {
+      "id": "feb0df59-4b0c-4af1-bcdd-88054f3bc69b",
+      "atoms": [
+        33
+      ],
+      "diaIDs": [
+        "fegIB@KNzO`IeIfVU^_m]edmFKVBBRij@BZD@`tv_iA@HeT"
+      ],
+      "nbAtoms": 1,
+      "delta": 7.67,
+      "js": [
+        {
+          "coupling": 8.742,
+          "atoms": [
+            38
+          ],
+          "diaIDs": [
+            "fegIB@NBzLpIgHhheDdYdmDeeDrSoEkA@qTu@AMB@Pr[Ot``DRj@"
+          ],
+          "multiplicity": "d",
+          "pathLength": 3
+        },
+        {
+          "coupling": 1.747,
+          "atoms": [
+            31
+          ],
+          "diaIDs": [
+            "fegIB@KNzO`IeIfVU^_m]edmFKVBBRij@BZD@`tv_iA@HeT"
+          ],
+          "multiplicity": "d",
+          "pathLength": 4
+        },
+        {
+          "coupling": 0.44,
+          "atoms": [
+            36
+          ],
+          "diaIDs": [
+            "fegIB@NBzLpIgHhheDdYdmDeeDrSoEkA@qTu@AMB@Pr[Ot``DRj@"
+          ],
+          "multiplicity": "d",
+          "pathLength": 5
+        }
+      ]
+    },
+    {
+      "id": "b0df594b-0c3a-41fc-9d88-054f3bc69bab",
+      "atoms": [
+        34
+      ],
+      "diaIDs": [
+        "fegIB@KNzO`IeIfVU^_m]edmFKVBBRij@BZD@`tv_iA@HeT"
+      ],
+      "nbAtoms": 1,
+      "delta": 7.67,
+      "js": [
+        {
+          "coupling": 8.742,
+          "atoms": [
+            37
+          ],
+          "diaIDs": [
+            "fegIB@NBzLpIgHhheDdYdmDeeDrSoEkA@qTu@AMB@Pr[Ot``DRj@"
+          ],
+          "multiplicity": "d",
+          "pathLength": 3
+        },
+        {
+          "coupling": 1.747,
+          "atoms": [
+            32
+          ],
+          "diaIDs": [
+            "fegIB@KNzO`IeIfVU^_m]edmFKVBBRij@BZD@`tv_iA@HeT"
+          ],
+          "multiplicity": "d",
+          "pathLength": 4
+        },
+        {
+          "coupling": 0.44,
+          "atoms": [
+            35
+          ],
+          "diaIDs": [
+            "fegIB@NBzLpIgHhheDdYdmDeeDrSoEkA@qTu@AMB@Pr[Ot``DRj@"
+          ],
+          "multiplicity": "d",
+          "pathLength": 5
+        }
+      ]
+    },
+    {
+      "id": "df594b0c-3af1-4cdd-8805-4f3bc69bab50",
+      "atoms": [
+        35
+      ],
+      "diaIDs": [
+        "fegIB@NBzLpIgHhheDdYdmDeeDrSoEkA@qTu@AMB@Pr[Ot``DRj@"
+      ],
+      "nbAtoms": 1,
+      "delta": 7.879,
+      "js": [
+        {
+          "coupling": 8.767,
+          "atoms": [
+            32
+          ],
+          "diaIDs": [
+            "fegIB@KNzO`IeIfVU^_m]edmFKVBBRij@BZD@`tv_iA@HeT"
+          ],
+          "multiplicity": "d",
+          "pathLength": 3
+        },
+        {
+          "coupling": 1.692,
+          "atoms": [
+            37
+          ],
+          "diaIDs": [
+            "fegIB@NBzLpIgHhheDdYdmDeeDrSoEkA@qTu@AMB@Pr[Ot``DRj@"
+          ],
+          "multiplicity": "d",
+          "pathLength": 4
+        },
+        {
+          "coupling": 0.44,
+          "atoms": [
+            34
+          ],
+          "diaIDs": [
+            "fegIB@KNzO`IeIfVU^_m]edmFKVBBRij@BZD@`tv_iA@HeT"
+          ],
+          "multiplicity": "d",
+          "pathLength": 5
+        }
+      ]
+    },
+    {
+      "id": "594b0c3a-f1fc-4d88-854f-3bc69bab50e2",
+      "atoms": [
+        36
+      ],
+      "diaIDs": [
+        "fegIB@NBzLpIgHhheDdYdmDeeDrSoEkA@qTu@AMB@Pr[Ot``DRj@"
+      ],
+      "nbAtoms": 1,
+      "delta": 7.879,
+      "js": [
+        {
+          "coupling": 8.767,
+          "atoms": [
+            31
+          ],
+          "diaIDs": [
+            "fegIB@KNzO`IeIfVU^_m]edmFKVBBRij@BZD@`tv_iA@HeT"
+          ],
+          "multiplicity": "d",
+          "pathLength": 3
+        },
+        {
+          "coupling": 1.692,
+          "atoms": [
+            38
+          ],
+          "diaIDs": [
+            "fegIB@NBzLpIgHhheDdYdmDeeDrSoEkA@qTu@AMB@Pr[Ot``DRj@"
+          ],
+          "multiplicity": "d",
+          "pathLength": 4
+        },
+        {
+          "coupling": 0.44,
+          "atoms": [
+            33
+          ],
+          "diaIDs": [
+            "fegIB@KNzO`IeIfVU^_m]edmFKVBBRij@BZD@`tv_iA@HeT"
+          ],
+          "multiplicity": "d",
+          "pathLength": 5
+        }
+      ]
+    },
+    {
+      "id": "4b0c3af1-fcdd-4805-8f3b-c69bab50e203",
+      "atoms": [
+        37
+      ],
+      "diaIDs": [
+        "fegIB@NBzLpIgHhheDdYdmDeeDrSoEkA@qTu@AMB@Pr[Ot``DRj@"
+      ],
+      "nbAtoms": 1,
+      "delta": 7.857,
+      "js": [
+        {
+          "coupling": 8.742,
+          "atoms": [
+            34
+          ],
+          "diaIDs": [
+            "fegIB@KNzO`IeIfVU^_m]edmFKVBBRij@BZD@`tv_iA@HeT"
+          ],
+          "multiplicity": "d",
+          "pathLength": 3
+        },
+        {
+          "coupling": 1.692,
+          "atoms": [
+            35
+          ],
+          "diaIDs": [
+            "fegIB@NBzLpIgHhheDdYdmDeeDrSoEkA@qTu@AMB@Pr[Ot``DRj@"
+          ],
+          "multiplicity": "d",
+          "pathLength": 4
+        },
+        {
+          "coupling": 0.44,
+          "atoms": [
+            32
+          ],
+          "diaIDs": [
+            "fegIB@KNzO`IeIfVU^_m]edmFKVBBRij@BZD@`tv_iA@HeT"
+          ],
+          "multiplicity": "d",
+          "pathLength": 5
+        }
+      ]
+    },
+    {
+      "id": "0c3af1fc-dd88-454f-bbc6-9bab50e20313",
+      "atoms": [
+        38
+      ],
+      "diaIDs": [
+        "fegIB@NBzLpIgHhheDdYdmDeeDrSoEkA@qTu@AMB@Pr[Ot``DRj@"
+      ],
+      "nbAtoms": 1,
+      "delta": 7.857,
+      "js": [
+        {
+          "coupling": 8.742,
+          "atoms": [
+            33
+          ],
+          "diaIDs": [
+            "fegIB@KNzO`IeIfVU^_m]edmFKVBBRij@BZD@`tv_iA@HeT"
+          ],
+          "multiplicity": "d",
+          "pathLength": 3
+        },
+        {
+          "coupling": 1.692,
+          "atoms": [
+            36
+          ],
+          "diaIDs": [
+            "fegIB@NBzLpIgHhheDdYdmDeeDrSoEkA@qTu@AMB@Pr[Ot``DRj@"
+          ],
+          "multiplicity": "d",
+          "pathLength": 4
+        },
+        {
+          "coupling": 0.44,
+          "atoms": [
+            31
+          ],
+          "diaIDs": [
+            "fegIB@KNzO`IeIfVU^_m]edmFKVBBRij@BZD@`tv_iA@HeT"
+          ],
+          "multiplicity": "d",
+          "pathLength": 5
+        }
+      ]
+    },
+    {
+      "id": "3af1fcdd-8805-4f3b-869b-ab50e20313ce",
+      "atoms": [
+        39
+      ],
+      "diaIDs": [
+        "fegIB@DDzLpIeIVyWYWe]fRg^KVf`@ij@BZD@aBv_iA@HeT"
+      ],
+      "nbAtoms": 1,
+      "delta": 3.256,
+      "js": []
+    },
+    {
+      "id": "f1fcdd88-054f-4bc6-9bab-50e20313ce8f",
+      "atoms": [
+        40
+      ],
+      "diaIDs": [
+        "fegIB@DDzLpIeIVyWYWe]fRg^KVf`@ij@BZD@aBv_iA@HeT"
+      ],
+      "nbAtoms": 1,
+      "delta": 3.256,
+      "js": []
+    },
+    {
+      "id": "fcdd8805-4f3b-469b-ab50-e20313ce8f89",
+      "atoms": [
+        41
+      ],
+      "diaIDs": [
+        "fegIB@DDzLpIeIVyWYWe]fRg^KVf`@ij@BZD@aBv_iA@HeT"
+      ],
+      "nbAtoms": 1,
+      "delta": 3.256,
+      "js": []
+    },
+    {
+      "id": "dd88054f-3bc6-4bab-90e2-0313ce8f8936",
+      "atoms": [
+        42
+      ],
+      "diaIDs": [
+        "fegIB@DDzLpIeIVyWYWe]fRg^KVf`@ij@BZD@aBv_iA@HeT"
+      ],
+      "nbAtoms": 1,
+      "delta": 3.256,
+      "js": []
+    },
+    {
+      "id": "88054f3b-c69b-4b50-a203-13ce8f893655",
+      "atoms": [
+        43
+      ],
+      "diaIDs": [
+        "fegIB@DDzLpIeIVyWYWe]fRg^KVf`@ij@BZD@aBv_iA@HeT"
+      ],
+      "nbAtoms": 1,
+      "delta": 3.256,
+      "js": []
+    },
+    {
+      "id": "054f3bc6-9bab-40e2-8313-ce8f8936558e",
+      "atoms": [
+        44
+      ],
+      "diaIDs": [
+        "fegIB@DDzLpIeIVyWYWe]fRg^KVf`@ij@BZD@aBv_iA@HeT"
+      ],
+      "nbAtoms": 1,
+      "delta": 3.256,
+      "js": []
+    }
+  ],
+  "joinedSignals": [
+    {
+      "id": "11b01f8a-58f5-43f7-881d-88c7e1cb88df",
+      "nbAtoms": 6,
+      "delta": 3.256,
+      "diaIDs": [
+        "fegIB@DDzLpIeIVyWYWe]fRg^KVf`@ij@BZD@aBv_iA@HeT"
+      ],
+      "atoms": [
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "js": [],
+      "multiplicity": "s"
+    },
+    {
+      "id": "c372c31c-11d5-41b2-9c8f-148cfea17a1c",
+      "nbAtoms": 2,
+      "delta": 6.976,
+      "diaIDs": [
+        "fegIB@LezL`IeIf^UYu^WlcMNBfZdH@@ajZ`@aLv_iA@HeT"
+      ],
+      "atoms": [
+        25,
+        26
+      ],
+      "js": [
+        {
+          "diaIDs": [
+            "fegIB@LezL`IeIf^UYu^WlcMNBfZdH@@ajZ`@aLv_iA@HeT"
+          ],
+          "pathLength": 3,
+          "multiplicity": "d",
+          "coupling": 3.425
+        }
+      ],
+      "multiplicity": "d"
+    },
+    {
+      "id": "205e2771-fad1-4e16-acb7-bbf85e718778",
+      "nbAtoms": 4,
+      "delta": 7.638999999999999,
+      "diaIDs": [
+        "fegIB@KNzO`IeIfVU^_m]edmFKVBBRij@BZD@`tv_iA@HeT"
+      ],
+      "atoms": [
+        31,
+        32,
+        33,
+        34
+      ],
+      "js": [
+        {
+          "coupling": 8.7545,
+          "multiplicity": "d",
+          "diaIDs": [
+            "fegIB@NBzLpIgHhheDdYdmDeeDrSoEkA@qTu@AMB@Pr[Ot``DRj@"
+          ],
+          "pathLength": 3
+        },
+        {
+          "coupling": 1.747,
+          "multiplicity": "d",
+          "diaIDs": [
+            "fegIB@KNzO`IeIfVU^_m]edmFKVBBRij@BZD@`tv_iA@HeT"
+          ],
+          "pathLength": 4
+        },
+        {
+          "coupling": 0.44,
+          "multiplicity": "d",
+          "diaIDs": [
+            "fegIB@NBzLpIgHhheDdYdmDeeDrSoEkA@qTu@AMB@Pr[Ot``DRj@"
+          ],
+          "pathLength": 5
+        }
+      ],
+      "multiplicity": "ddd"
+    },
+    {
+      "id": "c60ed2cb-c0d4-4353-beba-b06fadc6430a",
+      "nbAtoms": 4,
+      "delta": 7.867999999999999,
+      "diaIDs": [
+        "fegIB@NBzLpIgHhheDdYdmDeeDrSoEkA@qTu@AMB@Pr[Ot``DRj@"
+      ],
+      "atoms": [
+        35,
+        36,
+        37,
+        38
+      ],
+      "js": [
+        {
+          "coupling": 8.7545,
+          "multiplicity": "d",
+          "diaIDs": [
+            "fegIB@KNzO`IeIfVU^_m]edmFKVBBRij@BZD@`tv_iA@HeT"
+          ],
+          "pathLength": 3
+        },
+        {
+          "coupling": 1.692,
+          "multiplicity": "d",
+          "diaIDs": [
+            "fegIB@NBzLpIgHhheDdYdmDeeDrSoEkA@qTu@AMB@Pr[Ot``DRj@"
+          ],
+          "pathLength": 4
+        },
+        {
+          "coupling": 0.44,
+          "multiplicity": "d",
+          "diaIDs": [
+            "fegIB@KNzO`IeIfVU^_m]edmFKVBBRij@BZD@`tv_iA@HeT"
+          ],
+          "pathLength": 5
+        }
+      ],
+      "multiplicity": "ddd"
+    }
+  ],
+  "ranges": [
+    {
+      "id": "89eb7482-7291-4155-800b-d9ec47bc2e54",
+      "from": 3.206,
+      "to": 3.3059999999999996,
+      "integration": 6,
+      "signals": [
+        {
+          "id": "11b01f8a-58f5-43f7-881d-88c7e1cb88df",
+          "nbAtoms": 6,
+          "delta": 3.256,
+          "diaIDs": [
+            "fegIB@DDzLpIeIVyWYWe]fRg^KVf`@ij@BZD@aBv_iA@HeT"
+          ],
+          "atoms": [
+            39,
+            40,
+            41,
+            42,
+            43,
+            44
+          ],
+          "js": [],
+          "multiplicity": "s"
+        }
+      ]
+    },
+    {
+      "id": "15af2138-7f98-47a8-acf6-bf9265fbc429",
+      "from": 6.92171875,
+      "to": 7.03028125,
+      "integration": 2,
+      "signals": [
+        {
+          "id": "c372c31c-11d5-41b2-9c8f-148cfea17a1c",
+          "nbAtoms": 2,
+          "delta": 6.976,
+          "diaIDs": [
+            "fegIB@LezL`IeIf^UYu^WlcMNBfZdH@@ajZ`@aLv_iA@HeT"
+          ],
+          "atoms": [
+            25,
+            26
+          ],
+          "js": [
+            {
+              "diaIDs": [
+                "fegIB@LezL`IeIf^UYu^WlcMNBfZdH@@ajZ`@aLv_iA@HeT"
+              ],
+              "pathLength": 3,
+              "multiplicity": "d",
+              "coupling": 3.425
+            }
+          ],
+          "multiplicity": "d"
+        }
+      ]
+    },
+    {
+      "id": "52b6368e-ca94-42c8-94cc-4228a4f78e7a",
+      "from": 7.575323125,
+      "to": 7.702676874999999,
+      "integration": 4,
+      "signals": [
+        {
+          "id": "205e2771-fad1-4e16-acb7-bbf85e718778",
+          "nbAtoms": 4,
+          "delta": 7.638999999999999,
+          "diaIDs": [
+            "fegIB@KNzO`IeIfVU^_m]edmFKVBBRij@BZD@`tv_iA@HeT"
+          ],
+          "atoms": [
+            31,
+            32,
+            33,
+            34
+          ],
+          "js": [
+            {
+              "coupling": 8.7545,
+              "multiplicity": "d",
+              "diaIDs": [
+                "fegIB@NBzLpIgHhheDdYdmDeeDrSoEkA@qTu@AMB@Pr[Ot``DRj@"
+              ],
+              "pathLength": 3
+            },
+            {
+              "coupling": 1.747,
+              "multiplicity": "d",
+              "diaIDs": [
+                "fegIB@KNzO`IeIfVU^_m]edmFKVBBRij@BZD@`tv_iA@HeT"
+              ],
+              "pathLength": 4
+            },
+            {
+              "coupling": 0.44,
+              "multiplicity": "d",
+              "diaIDs": [
+                "fegIB@NBzLpIgHhheDdYdmDeeDrSoEkA@qTu@AMB@Pr[Ot``DRj@"
+              ],
+              "pathLength": 5
+            }
+          ],
+          "multiplicity": "ddd"
+        }
+      ]
+    },
+    {
+      "id": "6a710e9b-bd8d-430c-9c35-4330bc397968",
+      "from": 7.804391874999999,
+      "to": 7.9316081249999995,
+      "integration": 4,
+      "signals": [
+        {
+          "id": "c60ed2cb-c0d4-4353-beba-b06fadc6430a",
+          "nbAtoms": 4,
+          "delta": 7.867999999999999,
+          "diaIDs": [
+            "fegIB@NBzLpIgHhheDdYdmDeeDrSoEkA@qTu@AMB@Pr[Ot``DRj@"
+          ],
+          "atoms": [
+            35,
+            36,
+            37,
+            38
+          ],
+          "js": [
+            {
+              "coupling": 8.7545,
+              "multiplicity": "d",
+              "diaIDs": [
+                "fegIB@KNzO`IeIfVU^_m]edmFKVBBRij@BZD@`tv_iA@HeT"
+              ],
+              "pathLength": 3
+            },
+            {
+              "coupling": 1.692,
+              "multiplicity": "d",
+              "diaIDs": [
+                "fegIB@NBzLpIgHhheDdYdmDeeDrSoEkA@qTu@AMB@Pr[Ot``DRj@"
+              ],
+              "pathLength": 4
+            },
+            {
+              "coupling": 0.44,
+              "multiplicity": "d",
+              "diaIDs": [
+                "fegIB@KNzO`IeIfVU^_m]edmFKVBBRij@BZD@`tv_iA@HeT"
+              ],
+              "pathLength": 5
+            }
+          ],
+          "multiplicity": "ddd"
+        }
+      ]
+    }
+  ],
+  "status": "ok"
+}

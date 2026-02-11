@@ -1,0 +1,83 @@
+{
+  "molfile": "\nActelion Java MolfileCreator 1.0\n\n 10  9  0  0  0  0  0  0  0  0999 V2000\n   13.1806  -12.2618    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   13.1806  -10.5159    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n   14.6814  -13.1194    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n   10.1790  -12.2618    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0\n   11.6798  -13.1194    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   16.3491  -12.6646    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n   10.1736  -11.0518    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n    9.1338  -12.8714    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n   11.0748  -14.1672    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n   12.2848  -14.1672    0.0000 H   0  0  0  0  0  0  0  0  0  0  0  0\n  2  1  2  0  0  0  0\n  3  1  1  0  0  0  0\n  4  5  1  0  0  0  0\n  5  1  1  0  0  0  0\n  3  6  1  0  0  0  0\n  4  7  1  0  0  0  0\n  4  8  1  0  0  0  0\n  5  9  1  1  0  0  0\n  5 10  1  0  0  0  0\nM  END\n",
+  "diaIDs": [
+    "gJX`BDdvu@LRTGzQHxUP",
+    "gJX`BDdvu@LPTGzQ@~UP",
+    "gJX`BDdwM@LPTGzQ@~UP",
+    "gJX`BDdvu@LPtGzQBnUP",
+    "gJX`BDdvu@LSTGzQLxUP",
+    "gGXhKLIeI[ihA~dPHeT",
+    "gGXhHZIeIVjXA~dPHeT",
+    "gGXhHZIeIVjXA~dPHeT",
+    "gGXhDZIeInjZR`OtbADj`",
+    "gGXhDZIeInjZR`OtbADj`"
+  ],
+  "nucleus": "1H",
+  "signals": [
+    {
+      "id": "30453d03-dc4f-4bd1-9b22-8072ebc91ab8",
+      "atoms": [
+        9
+      ],
+      "diaIDs": [
+        "gGXhDZIeInjZR`OtbADj`"
+      ],
+      "nbAtoms": 1,
+      "delta": 3.434,
+      "js": []
+    },
+    {
+      "id": "453d03dc-4f7b-41db-a280-72ebc91ab805",
+      "atoms": [
+        8
+      ],
+      "diaIDs": [
+        "gGXhDZIeInjZR`OtbADj`"
+      ],
+      "nbAtoms": 1,
+      "delta": 3.434,
+      "js": []
+    }
+  ],
+  "joinedSignals": [
+    {
+      "id": "222f8e38-1707-4a43-959f-aa9eb1b77530",
+      "nbAtoms": 2,
+      "delta": 3.434,
+      "diaIDs": [
+        "gGXhDZIeInjZR`OtbADj`"
+      ],
+      "atoms": [
+        9,
+        8
+      ],
+      "js": [],
+      "multiplicity": "s"
+    }
+  ],
+  "ranges": [
+    {
+      "id": "eb74bdf5-cfd7-4764-a831-884f90d51477",
+      "from": 3.3840000000000003,
+      "to": 3.484,
+      "integration": 2,
+      "signals": [
+        {
+          "id": "222f8e38-1707-4a43-959f-aa9eb1b77530",
+          "nbAtoms": 2,
+          "delta": 3.434,
+          "diaIDs": [
+            "gGXhDZIeInjZR`OtbADj`"
+          ],
+          "atoms": [
+            9,
+            8
+          ],
+          "js": [],
+          "multiplicity": "s"
+        }
+      ]
+    }
+  ],
+  "status": "ok"
+}

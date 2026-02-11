@@ -1,4 +1,4 @@
-# Proton NMR Chemical Shift Predictor
+# Proton NMR Chemical Shift Predictor and Spectrum Simulator
 
 A machine learning pipeline for predicting ¹H-NMR chemical shifts (δ, ppm) from molecular structures using SMILES notation and molfile data.
 
@@ -50,7 +50,7 @@ Different types of protons appear in characteristic regions of the spectrum:
 
 ### Prerequisites
 
-- Python 3.8+
+- Python 3.12+
 - CUDA-compatible GPU (optional, for faster training)
 
 ### Setup
@@ -58,8 +58,10 @@ Different types of protons appear in characteristic regions of the spectrum:
 Clone the repository and install the required dependencies:
 
 ```bash
-git clone https://github.com/yourusername/building-a-spectrum-predictor-from-smiles.git
+git clone https://github.com/antonio-lopez-lao-all825/building-a-spectrum-predictor-from-smiles.git
 cd building-a-spectrum-predictor-from-smiles
+python -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
@@ -221,13 +223,3 @@ Several directions could improve the model:
 **Transfer learning** from large computational datasets (DFT-calculated chemical shifts) could improve predictions, especially for underrepresented chemical environments.
 
 **Uncertainty quantification** through dropout at inference time or ensemble methods would provide confidence estimates for predictions.
-
-## Dependencies
-
-```
-numpy>=1.20.0
-torch>=1.9.0
-scikit-learn>=0.24.0
-matplotlib>=3.4.0
-rdkit>=2021.03
-```

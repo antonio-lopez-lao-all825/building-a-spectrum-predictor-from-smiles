@@ -14,7 +14,7 @@ from features import PROTON_FEATURE_NAMES, extract_proton_features, prepare_mole
 
 RDLogger.DisableLog("rdApp.warning")
 
-DATASET_OUT = "datasets/proton_dataset_multi.npz"
+DATASET_OUT = "datasets/proton_dataset.npz"
 
 def build_dataset(input_dir):
     """

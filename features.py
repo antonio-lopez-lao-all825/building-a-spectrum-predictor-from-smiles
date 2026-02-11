@@ -1,13 +1,15 @@
 """
 Shared feature extraction utilities for proton NMR prediction.
+Supports protons attached to any heavy atom (C, N, O, etc.).
 """
 
 import numpy as np
 from rdkit import Chem
 from rdkit.Chem import AllChem
 
+# Se añade "parent_atomic_num" a la lista
 PROTON_FEATURE_NAMES = [
-    "atomic_number",
+    "parent_atomic_num",
     "degree",
     "total_num_Hs",
     "formal_charge",
@@ -30,7 +32,6 @@ PROTON_FEATURE_NAMES = [
     "max_neighbor_distance",
 ]
 
-
 def safe_float(v, default=0.0):
     """Safely convert value to float, returning default if invalid."""
     try:
@@ -39,12 +40,8 @@ def safe_float(v, default=0.0):
     except Exception:
         return default
 
-
 def prepare_molecule(molfile):
-    """
-    Parse molfile and prepare molecule for feature extraction.
-    Returns (mol_original, mol_with_H, conformer) or (None, None, None) on failure.
-    """
+    """Parse molfile and prepare molecule for feature extraction."""
     mol = Chem.MolFromMolBlock(molfile, sanitize=True, removeHs=False)
     if mol is None:
         return None, None, None
@@ -58,32 +55,31 @@ def prepare_molecule(molfile):
 
     return mol, mol_h, mol_h.GetConformer()
 
-
-def extract_proton_features(mol, c_idx, conf):
+def extract_proton_features(mol, parent_idx, conf):
     """
-    Extract features for a proton attached to carbon at c_idx.
-    Returns numpy array of shape (21,) with float32 dtype.
+    Extract features for a proton attached to the atom at parent_idx.
+    Ahora incluye el número atómico del átomo padre explícitamente.
     """
-    atom = mol.GetAtomWithIdx(c_idx)
+    atom = mol.GetAtomWithIdx(parent_idx)
     hyb = atom.GetHybridization()
 
-    # Basic atom properties
+    # Características básicas del átomo padre
     features = [
-        atom.GetAtomicNum(),
-        atom.GetDegree(),
-        atom.GetTotalNumHs(),
-        atom.GetFormalCharge(),
+        float(atom.GetAtomicNum()), # Identificador clave (C=6, N=7, O=8...)
+        float(atom.GetDegree()),
+        float(atom.GetTotalNumHs()),
+        float(atom.GetFormalCharge()),
         float(atom.GetIsAromatic()),
         float(hyb == Chem.rdchem.HybridizationType.SP),
         float(hyb == Chem.rdchem.HybridizationType.SP2),
         float(hyb == Chem.rdchem.HybridizationType.SP3),
     ]
 
-    # Gasteiger charge (clipped)
+    # Carga de Gasteiger
     q = safe_float(atom.GetProp("_GasteigerCharge")) if atom.HasProp("_GasteigerCharge") else 0.0
     features.append(np.clip(q, -1.0, 1.0))
 
-    # 2-bond neighborhood analysis
+    # Análisis de vecindad a 2 enlaces
     neighbors_2 = {nn.GetIdx() for n in atom.GetNeighbors() for nn in n.GetNeighbors()}
     charges, n_C, n_O, n_N, n_arom = [], 0, 0, 0, 0
 
@@ -97,7 +93,7 @@ def extract_proton_features(mol, c_idx, conf):
         n_N += sym == "N"
         n_arom += a.GetIsAromatic()
 
-    # Charge statistics
+    # Estadísticas de carga en la vecindad
     if charges:
         charges = np.array([c for c in charges if np.isfinite(c)], dtype=np.float32)
         if len(charges) > 0:
@@ -107,9 +103,9 @@ def extract_proton_features(mol, c_idx, conf):
     else:
         features.extend([0.0, 0.0, 0.0])
 
-    features.extend([n_C, n_O, n_N, n_arom])
+    features.extend([float(n_C), float(n_O), float(n_N), float(n_arom)])
 
-    # Bond type flags
+    # Flags de enlaces pi y rigidez
     bond_types = [b.GetBondType() for b in atom.GetBonds()]
     pi_types = {Chem.rdchem.BondType.DOUBLE, Chem.rdchem.BondType.AROMATIC}
     
@@ -117,8 +113,8 @@ def extract_proton_features(mol, c_idx, conf):
     rigid = any(b.IsInRing() or b.GetBondType() == Chem.rdchem.BondType.DOUBLE for b in atom.GetBonds())
     features.extend([float(bonded_to_pi), float(rigid)])
 
-    # Geometry: distances to neighbors
-    pos = conf.GetAtomPosition(c_idx)
+    # Geometría: distancias a vecinos
+    pos = conf.GetAtomPosition(parent_idx)
     dists = []
     for n in atom.GetNeighbors():
         p = conf.GetAtomPosition(n.GetIdx())

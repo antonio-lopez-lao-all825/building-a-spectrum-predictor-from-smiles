@@ -125,7 +125,8 @@ The chemical shift of a proton is influenced by:
 │  │ build_dataset.py  │────▶│ features.py  │                                │
 │  └─────────┬─────────┘     └──────────────┘                                │
 │            │                                                                │
-│            │  For each H atom attached to C:                               │
+│            │  For each H atom attached to any heavy atom (C, N, O, etc.): │
+│            │  • Parent atom identification (atomic number)                 │
 │            │  • Atomic properties (hybridization, aromaticity, etc.)       │
 │            │  • Gasteiger charges (atom + neighborhood)                    │
 │            │  • Neighbor counts (aromatic C, O, N)                         │
@@ -319,21 +320,21 @@ python predict.py "c1ccccc1" --b0 600.0 --linewidth 0.5
 
 ## Feature Engineering
 
-The `features.py` module extracts 21 molecular descriptors for each proton attached to a carbon atom. These features encode the local chemical environment that determines the chemical shift.
+The `features.py` module extracts 21 molecular descriptors for each proton attached to any heavy atom (C, N, O, etc.). These features encode the local chemical environment that determines the chemical shift.
 
 ### Feature List
 
 | # | Feature Name | Description |
 |---|--------------|-------------|
-| 1 | `atomic_number` | Atomic number of parent carbon (always 6) |
-| 2 | `degree` | Number of bonds to parent carbon |
-| 3 | `total_num_Hs` | Total hydrogens on parent carbon |
-| 4 | `formal_charge` | Formal charge on parent carbon |
-| 5 | `is_aromatic` | Boolean: parent carbon in aromatic ring |
+| 1 | `parent_atomic_num` | Atomic number of parent atom (C=6, N=7, O=8, etc.) |
+| 2 | `degree` | Number of bonds to parent atom |
+| 3 | `total_num_Hs` | Total hydrogens on parent atom |
+| 4 | `formal_charge` | Formal charge on parent atom |
+| 5 | `is_aromatic` | Boolean: parent atom in aromatic ring |
 | 6 | `hyb_sp` | Boolean: sp hybridization |
 | 7 | `hyb_sp2` | Boolean: sp² hybridization |
 | 8 | `hyb_sp3` | Boolean: sp³ hybridization |
-| 9 | `gasteiger_charge` | Gasteiger partial charge on parent carbon |
+| 9 | `gasteiger_charge` | Gasteiger partial charge on parent atom |
 | 10 | `mean_charge_2bonds` | Mean Gasteiger charge at 2-bond distance |
 | 11 | `max_charge_2bonds` | Maximum Gasteiger charge at 2-bond distance |
 | 12 | `min_charge_2bonds` | Minimum Gasteiger charge at 2-bond distance |
@@ -473,19 +474,37 @@ The model is evaluated using:
 2. **Predicted vs True** (`pred_vs_true.png`): Scatter plot with ideal line; good models show tight clustering around diagonal
 3. **Error Histogram** (`error_histogram.png`): Distribution of errors; should be right-skewed with most errors near zero
 
+### Training Results
+
+#### Validation MAE Evolution
+
+The following plot shows the evolution of the Mean Absolute Error (MAE) on the validation set during training:
+
+![Validation MAE Evolution](training_plots/val_mae_evolution.png)
+
+#### Predicted vs True Chemical Shifts
+
+Scatter plot comparing predicted chemical shifts against experimental values. Points close to the diagonal line indicate accurate predictions:
+
+![Predicted vs True](training_plots/pred_vs_true.png)
+
+#### Error Distribution
+
+Histogram showing the distribution of absolute errors. The majority of predictions have errors close to zero:
+
+![Error Histogram](training_plots/error_histogram.png)
+
 ---
 
 ## Limitations and Future Work
 
 ### Current Limitations
 
-1. **Only C-H protons**: The model only predicts shifts for protons attached to carbon. Protons on heteroatoms (O-H, N-H) are not supported.
+1. **Limited feature set**: 21 features capture local environment but may miss long-range effects.
 
-2. **Limited feature set**: 21 features capture local environment but may miss long-range effects.
+2. **No coupling prediction**: J-coupling constants are not predicted, only chemical shifts.
 
-3. **No coupling prediction**: J-coupling constants are not predicted, only chemical shifts.
-
-4. **Solvent effects**: The model does not account for solvent-dependent shifts.
+3. **Solvent effects**: The model does not account for solvent-dependent shifts.
 
 ### Potential Improvements
 
@@ -498,8 +517,6 @@ The model is evaluated using:
 4. **Multi-task learning**: Jointly predict chemical shifts and coupling constants
 
 5. **Uncertainty quantification**: Add dropout or ensemble methods to estimate prediction confidence
-
-6. **Extended atom types**: Support N-H, O-H, and other heteroatom-attached protons
 
 ---
 

@@ -1,6 +1,15 @@
 """
 Predict proton NMR chemical shifts from SMILES using trained MLP model.
-Generates comparison plot of original vs predicted spectrum.
+
+This module provides functionality to:
+1. Load a trained neural network model for chemical shift prediction
+2. Process molecular structures from SMILES notation
+3. Generate predicted NMR spectra with simulated peak shapes
+4. Create comparison plots between experimental and predicted spectra
+
+The prediction is based on molecular descriptors that encode the local
+electronic and geometric environment of each proton, following established
+NMR theory where chemical shifts depend on nuclear shielding effects.
 """
 
 import os
@@ -26,7 +35,20 @@ os.makedirs(PLOTS_DIR, exist_ok=True)
 
 
 class ProtonMLP(torch.nn.Module):
-    """Simple MLP for proton chemical shift prediction."""
+    """
+    Multi-layer perceptron for proton NMR chemical shift prediction.
+    
+    This neural network architecture maps molecular descriptors to chemical
+    shifts (in ppm). The architecture uses hidden layers with ReLU activation
+    for non-linear mapping of the complex relationship between local molecular
+    environment and nuclear shielding effects.
+    
+    Parameters
+    ----------
+    n_features : int
+        Number of input features (molecular descriptors)
+    """
+    
     def __init__(self, n_features):
         super().__init__()
         self.net = torch.nn.Sequential(

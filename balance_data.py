@@ -1,5 +1,18 @@
 """
-Analyze and filter JSON files to create a balanced dataset across 0-12 ppm range.
+Analyze and balance NMR dataset distribution across chemical shift range.
+
+This module provides tools to:
+1. Analyze the distribution of chemical shifts in the dataset
+2. Identify over-represented and under-represented spectral regions
+3. Create a balanced subset for improved model training
+
+Dataset balancing is crucial for NMR chemical shift prediction because:
+- Aliphatic protons (0-2 ppm) are often over-represented
+- Aromatic and heteroatom-attached protons are less common
+- Imbalanced training data leads to biased predictions
+
+The binning approach divides the 0-12 ppm range into uniform intervals
+and samples molecules to achieve more uniform coverage.
 """
 
 import os

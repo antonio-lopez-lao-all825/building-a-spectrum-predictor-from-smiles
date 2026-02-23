@@ -1,5 +1,16 @@
 """
 Train MLP model for proton NMR chemical shift prediction.
+
+This module implements the training pipeline for a multi-layer perceptron (MLP)
+that predicts 1H NMR chemical shifts from molecular descriptors. The model
+learns the relationship between local chemical environment features and
+nuclear magnetic shielding effects.
+
+Training methodology:
+- Architecture: MLP with ReLU activations
+- Loss function: Huber loss (robust to outliers)
+- Optimizer: AdamW with learning rate scheduling
+- Early stopping to prevent overfitting
 """
 
 import os
@@ -8,7 +19,7 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, TensorDataset
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_absolute_error
+from sklearn.metrics import mean_absolute_error, r2_score
 import matplotlib.pyplot as plt
 
 DATASET_PATH = "datasets/proton_dataset.npz"
@@ -28,7 +39,19 @@ os.makedirs(PLOTS_DIR, exist_ok=True)
 
 
 class ProtonMLP(nn.Module):
-    """Simple MLP for proton chemical shift prediction."""
+    """
+    Multi-layer perceptron for proton NMR chemical shift prediction.
+    
+    Architecture designed for regression of continuous chemical shift values
+    from molecular descriptor inputs. Uses ReLU activation functions for
+    non-linear mapping capability.
+    
+    Parameters
+    ----------
+    n_features : int
+        Number of input features (molecular descriptors)
+    """
+    
     def __init__(self, n_features):
         super().__init__()
         self.net = nn.Sequential(
@@ -54,7 +77,7 @@ def train_epoch(model, loader, optimizer, loss_fn, device):
 
 
 def evaluate(model, loader, device):
-    """Evaluate model, return MAE and predictions."""
+    """Evaluate model, return MAE, R2 and predictions."""
     model.eval()
     preds, true = [], []
     with torch.no_grad():
@@ -63,10 +86,10 @@ def evaluate(model, loader, device):
             true.append(yb.numpy())
     preds = np.concatenate(preds)
     true = np.concatenate(true)
-    return mean_absolute_error(true, preds), preds, true
+    return mean_absolute_error(true, preds), r2_score(true, preds), preds, true
 
 
-def save_plots(val_mae_history, val_preds, val_true, output_dir):
+def save_plots(val_mae_history, val_r2_history, val_preds, val_true, output_dir):
     """Generate and save training plots."""
     # 1. Val MAE evolution
     plt.figure(figsize=(10, 5))
@@ -78,8 +101,19 @@ def save_plots(val_mae_history, val_preds, val_true, output_dir):
     plt.tight_layout()
     plt.savefig(os.path.join(output_dir, "val_mae_evolution.png"), dpi=150)
     plt.close()
+
+    # 2. Val R2 evolution
+    plt.figure(figsize=(10, 5))
+    plt.plot(range(1, len(val_r2_history) + 1), val_r2_history, 'g-', linewidth=1.5)
+    plt.xlabel("Epoch")
+    plt.ylabel("Val R2")
+    plt.title("Validation R2 Evolution")
+    plt.grid(alpha=0.3)
+    plt.tight_layout()
+    plt.savefig(os.path.join(output_dir, "val_r2_evolution.png"), dpi=150)
+    plt.close()
     
-    # 2. Predicted vs True scatter
+    # 3. Predicted vs True scatter
     plt.figure(figsize=(8, 8))
     plt.scatter(val_true, val_preds, s=5, alpha=0.3, c='steelblue')
     lims = [min(val_true.min(), val_preds.min()), max(val_true.max(), val_preds.max())]
@@ -93,7 +127,7 @@ def save_plots(val_mae_history, val_preds, val_true, output_dir):
     plt.savefig(os.path.join(output_dir, "pred_vs_true.png"), dpi=150)
     plt.close()
     
-    # 3. Absolute error histogram
+    # 4. Absolute error histogram
     errors = np.abs(val_preds - val_true)
     plt.figure(figsize=(10, 5))
     plt.hist(errors, bins=50, color='steelblue', edgecolor='black', alpha=0.7)
@@ -143,13 +177,15 @@ def main():
     # Training loop
     best_val_mae, epochs_no_improve = np.inf, 0
     val_mae_history = []
+    val_r2_history = []
 
     for epoch in range(1, EPOCHS + 1):
         train_epoch(model, train_loader, optimizer, loss_fn, DEVICE)
-        val_mae, val_preds, val_true = evaluate(model, val_loader, DEVICE)
+        val_mae, val_r2, val_preds, val_true = evaluate(model, val_loader, DEVICE)
         val_mae_history.append(val_mae)
+        val_r2_history.append(val_r2)
 
-        print(f"Epoch {epoch:03d} | Val MAE: {val_mae:.5f} ppm")
+        print(f"Epoch {epoch:03d} | Val MAE: {val_mae:.5f} ppm | Val R2: {val_r2:.5f}")
         scheduler.step(val_mae)
 
         if val_mae < best_val_mae - MIN_DELTA:
@@ -163,7 +199,7 @@ def main():
                 break
 
     # Generate plots
-    save_plots(val_mae_history, best_preds, best_true, PLOTS_DIR)
+    save_plots(val_mae_history, val_r2_history, best_preds, best_true, PLOTS_DIR)
     
     print(f"Best Val MAE: {best_val_mae:.4f} ppm | Model saved to: {MODEL_OUT}")
     print(f"Plots saved to: {PLOTS_DIR}/")

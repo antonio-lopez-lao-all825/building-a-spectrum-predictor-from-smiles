@@ -1,6 +1,12 @@
 """
-Build proton NMR dataset from JSON files. 
-Includes protons attached to any heavy atom (C, N, O, S, P).
+Build proton NMR dataset from JSON files.
+
+This module processes NMR spectroscopy data files and extracts molecular descriptors
+for machine learning-based chemical shift prediction. Supports protons attached to
+any heavy atom (C, N, O, S, P) to enable prediction across diverse functional groups.
+
+The extracted features encode the local electronic and geometric environment of each
+proton, which determines its chemical shift according to nuclear magnetic shielding theory.
 """
 
 import os
@@ -16,12 +22,37 @@ RDLogger.DisableLog("rdApp.warning")
 
 DATASET_OUT = "datasets/proton_dataset.npz"
 
+
 def build_dataset(input_dir):
     """
-    Process all JSON files and extract features for ALL valid protons.
+    Process all JSON files and extract features for all valid protons.
+    
+    This function iterates through NMR data files, identifies hydrogen atoms
+    attached to allowed parent atoms, and computes molecular descriptors that
+    characterize the local chemical environment affecting the proton's chemical shift.
+    
+    Parameters
+    ----------
+    input_dir : str
+        Directory containing JSON files with NMR experimental data
+        
+    Returns
+    -------
+    tuple
+        (X_norm, y, meta, X_min, X_max) where:
+        - X_norm: Min-max normalized feature matrix
+        - y: Target chemical shifts in ppm
+        - meta: Metadata for each sample
+        - X_min, X_max: Normalization parameters for inference
     """
     X_raw, y, meta = [], [], []
-    # Definimos qué átomos padre permitimos para el hidrógeno
+    
+    # Define allowed parent atoms for hydrogen
+    # C-H: alkyl, aromatic, vinyl protons
+    # N-H: amines, amides, imines
+    # O-H: alcohols, carboxylic acids, phenols
+    # S-H: thiols
+    # P-H: phosphines
     ALLOWED_PARENTS = {"C", "N", "O", "S", "P"}
 
     for json_path in glob.glob(os.path.join(input_dir, "*.json")):
@@ -50,18 +81,18 @@ def build_dataset(input_dir):
                 if H.GetSymbol() != "H":
                     continue
 
-                # Identificar el átomo al que está unido el Hidrógeno
+                # Identify the heavy atom to which the hydrogen is bonded
                 neighbors = H.GetNeighbors()
                 if not neighbors:
                     continue
                 
                 parent = neighbors[0]
                 
-                # Filtrar por tipos de átomos permitidos
+                # Filter by allowed parent atom types
                 if parent.GetSymbol() not in ALLOWED_PARENTS:
                     continue
 
-                # Extraer características (ahora incluyendo el número atómico del padre)
+                # Extract features including parent atomic number for model differentiation
                 feat = extract_proton_features(mol_h, parent.GetIdx(), conf)
                 if not np.all(np.isfinite(feat)):
                     continue
@@ -72,13 +103,14 @@ def build_dataset(input_dir):
                     "file": os.path.basename(json_path),
                     "H_idx": h_idx,
                     "parent_idx": parent.GetIdx(),
-                    "parent_type": parent.GetSymbol() # Guardamos si es C, O, N...
+                    "parent_type": parent.GetSymbol()  # Store parent type (C, O, N, etc.)
                 })
 
     X_raw = np.nan_to_num(np.array(X_raw, dtype=np.float32), nan=0.0, posinf=0.0, neginf=0.0)
     y = np.array(y, dtype=np.float32)
 
-    # Normalización Min-max
+    # Min-max normalization to scale features to [0, 1] range
+    # This improves neural network training stability and convergence
     X_min, X_max = X_raw.min(axis=0), X_raw.max(axis=0)
     denom = np.where(X_max - X_min == 0, 1.0, X_max - X_min)
     X_norm = np.nan_to_num((X_raw - X_min) / denom, nan=0.0, posinf=0.0, neginf=0.0)
@@ -94,7 +126,7 @@ if __name__ == "__main__":
 
     X, y, meta, X_min, X_max = build_dataset(args.input_dir)
 
-    # Guardar el dataset comprimido
+    # Save the compressed dataset with all necessary components for training and inference
     np.savez_compressed(
         DATASET_OUT,
         X=X, y=y, meta=meta,
@@ -102,6 +134,6 @@ if __name__ == "__main__":
         feature_names=PROTON_FEATURE_NAMES
     )
 
-    print(f"Dataset guardado en {DATASET_OUT}")
-    print(f"Total protones procesados: {len(y)}")
-    print(f"Número de características por protón: {X.shape[1]}")
+    print(f"Dataset saved to {DATASET_OUT}")
+    print(f"Total protons processed: {len(y)}")
+    print(f"Number of features per proton: {X.shape[1]}")

@@ -51,6 +51,7 @@ Different types of protons appear in characteristic regions of the spectrum:
 ### Prerequisites
 
 - Python 3.12+
+- Python Virtual Environment package
 - CUDA-compatible GPU (optional, for faster training)
 
 ### Setup
@@ -176,7 +177,7 @@ The `molfile` field contains the 3D molecular structure in MDL format, which is 
 
 ## Results
 
-The model is evaluated using Mean Absolute Error (MAE), which represents the average absolute difference between predicted and experimental chemical shifts in ppm.
+The model is evaluated using Mean Absolute Error (MAE) and the coefficient of determination (R2). MAE represents the average absolute difference between predicted and experimental chemical shifts in ppm, while R2 summarizes how much variance in the targets is explained by the model.
 
 ### Training Results
 
@@ -187,6 +188,12 @@ The following plots show the model's performance during training:
 The validation MAE decreases steadily during training before plateauing, indicating successful learning without overfitting:
 
 ![Validation MAE Evolution](training_plots/val_mae_evolution.png)
+
+#### Validation R2 Evolution
+
+The R2 metric increases during training as the model captures more of the variance in chemical shifts:
+
+![Validation R2 Evolution](training_plots/val_r2_evolution.png)
 
 #### Predicted vs True Chemical Shifts
 

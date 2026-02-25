@@ -75,10 +75,9 @@ def load_model_and_norm():
 
     return model, X_min, X_max
 
-
 def normalize(x, X_min, X_max):
-    """Apply min-max normalization."""
-    return (x - X_min) / (X_max - X_min + 1e-8)
+    denom = np.where((X_max - X_min) == 0, 1.0, X_max - X_min)
+    return (x - X_min) / denom
 
 
 def smiles_to_filename(smiles):
@@ -251,8 +250,9 @@ def predict_from_smiles(smiles, model, X_min, X_max):
             if H.GetSymbol() != "H":
                 continue
 
+            ALLOWED_PARENTS = {"C", "N", "O", "S", "P"}
             parent = H.GetNeighbors()[0]
-            if parent.GetSymbol() != "C":
+            if parent.GetSymbol() not in ALLOWED_PARENTS:
                 continue
 
             feat = extract_proton_features(mol_h, parent.GetIdx(), conf)

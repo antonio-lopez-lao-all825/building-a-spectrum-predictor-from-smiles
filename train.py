@@ -126,21 +126,6 @@ def save_plots(val_mae_history, val_r2_history, val_preds, val_true, output_dir)
     plt.tight_layout()
     plt.savefig(os.path.join(output_dir, "pred_vs_true.png"), dpi=150)
     plt.close()
-    
-    # 4. Absolute error histogram
-    errors = np.abs(val_preds - val_true)
-    plt.figure(figsize=(10, 5))
-    plt.hist(errors, bins=50, color='steelblue', edgecolor='black', alpha=0.7)
-    plt.axvline(np.mean(errors), color='red', linestyle='--', label=f'Mean: {np.mean(errors):.3f} ppm')
-    plt.axvline(np.median(errors), color='orange', linestyle='--', label=f'Median: {np.median(errors):.3f} ppm')
-    plt.xlabel("Absolute Error (ppm)")
-    plt.ylabel("Count")
-    plt.title("Distribution of Absolute Errors")
-    plt.legend()
-    plt.grid(alpha=0.3)
-    plt.tight_layout()
-    plt.savefig(os.path.join(output_dir, "error_histogram.png"), dpi=150)
-    plt.close()
 
 
 def main():

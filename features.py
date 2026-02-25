@@ -101,7 +101,7 @@ def prepare_molecule(molfile):
         - mol_h: Molecule with explicit hydrogens
         - conformer: 3D conformer for geometric calculations
     """
-    mol = Chem.MolFromMolBlock(molfile, sanitize=True, removeHs=False)
+    mol = Chem.MolFromMolBlock(molfile, sanitize=True, removeHs=True)
     if mol is None:
         return None, None, None
 
@@ -146,7 +146,7 @@ def extract_proton_features(mol, parent_idx, conf):
     # Basic properties of the parent atom (directly influence electron density)
     features = [
         float(atom.GetAtomicNum()),  # Key identifier (C=6, N=7, O=8, etc.)
-        float(atom.GetDegree()),  # Connectivity affects inductive effects  # Connectivity affects inductive effects
+        float(atom.GetDegree()),  # Connectivity affects inductive effects
         float(atom.GetTotalNumHs()),  # Number of equivalent protons
         float(atom.GetFormalCharge()),  # Formal charge affects shielding
         float(atom.GetIsAromatic()),  # Ring current effects

@@ -1,14 +1,14 @@
 # Proton NMR Chemical Shift Predictor and Spectrum Simulator
 
-A machine learning pipeline for predicting ¹H-NMR chemical shifts (δ, ppm) from molecular structures using SMILES notation and molfile data.
+A machine learning pipeline for predicting ¹H-NMR chemical shifts (δ, ppm) from molecular structures using SMILES notation.
 
 ## Overview
 
 This project implements an end-to-end machine learning system for predicting proton (¹H) NMR chemical shifts from molecular structure data. Nuclear Magnetic Resonance (NMR) spectroscopy is one of the most powerful techniques for molecular structure determination in chemistry. The chemical shift (δ) of a proton is highly sensitive to its local electronic environment, making it a valuable descriptor for structure elucidation.
 
-The approach takes advantage of the fact that chemical shifts are primarily determined by the local electronic environment around each proton. By extracting relevant molecular descriptors and training a neural network on experimental data, we can predict the expected chemical shift for any proton in a molecule given its 3D structure.
+The approach takes advantage of the fact that chemical shifts are primarily determined by the local electronic environment around each proton. By extracting relevant molecular descriptors and training a neural network on experimental data, we can predict the expected chemical shift for any proton in a molecule given its SMILES string.
 
-The pipeline consists of three main stages: **feature extraction** (computing molecular descriptors for each proton), **model training** (training a Multi-Layer Perceptron to learn the relationship between features and chemical shifts), and **prediction** (using the trained model to predict shifts for new molecules).
+The pipeline consists of three main stages: **feature extraction** (computing molecular descriptors for each proton), **model training** (training a Multi-Layer Perceptron), and **prediction** (generating and visualizing predicted spectra for new molecules).
 
 ## Scientific Background
 
@@ -66,21 +66,19 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-The main dependencies are NumPy, PyTorch, scikit-learn, Matplotlib, and RDKit. RDKit can be installed via conda (`conda install -c conda-forge rdkit`) or pip (`pip install rdkit`).
+The main dependencies are NumPy, PyTorch, scikit-learn, Matplotlib, and RDKit.
 
 ## Usage
 
 ### 1. Feature Extraction & Dataset Building
 
-The first step is to extract molecular features from the raw NMR data. The input data consists of JSON files containing the molecular structure (as a molfile) and experimental chemical shifts for each proton.
+Extract molecular features from the NMR data:
 
 ```bash
-python build_dataset.py --input_dir data/nmr_predictions
+python build_dataset.py --input_dir data/nmr_predictions_balanced
 ```
 
-This script processes each molecule by parsing its 3D structure, identifying all protons, and computing 21 molecular descriptors for each one. The descriptors encode information about the local chemical environment: the parent atom's properties (atomic number, hybridization, charge), the neighborhood composition (counts and charges of atoms at 2-bond distance), and geometric features (distances to neighboring atoms).
-
-The output is a compressed NumPy file (`datasets/proton_dataset.npz`) containing the normalized feature matrix, target chemical shifts, and normalization parameters needed for inference.
+This script processes each molecule by parsing its 3D structure, identifying all protons, and computing 21 molecular descriptors for each one. The output is a compressed NumPy file (`datasets/proton_dataset.npz`) containing the normalized feature matrix, target chemical shifts, and normalization parameters needed for inference. The current dataset contains **36,987 proton samples**.
 
 ### 2. Model Training
 
@@ -90,55 +88,70 @@ Once the dataset is built, train the neural network:
 python train.py
 ```
 
-The training script loads the preprocessed dataset, splits it into training (80%) and validation (20%) sets, and trains a Multi-Layer Perceptron. The model architecture consists of two hidden layers (128 and 64 neurons) with ReLU activations, outputting a single chemical shift value.
-
-Training uses the Huber loss function, which combines the benefits of mean squared error (smooth gradients near the optimum) and mean absolute error (robustness to outliers). This is particularly suitable for NMR data where some chemical shifts may have measurement uncertainty.
-
-The optimizer is AdamW with a learning rate scheduler that reduces the learning rate when validation MAE plateaus. Early stopping prevents overfitting by halting training if no improvement is seen for 20 consecutive epochs.
+The training script loads the preprocessed dataset, splits it into training (80%) and validation (20%) sets, and trains a Multi-Layer Perceptron. Training uses Huber loss, AdamW optimizer, and a learning rate scheduler that reduces the learning rate when validation MAE plateaus. Early stopping prevents overfitting by halting training if no improvement is seen for 20 consecutive epochs.
 
 The trained model weights are saved to `proton_mlp.pt`, and training visualizations are generated in the `training_plots/` directory.
 
 ### 3. Prediction
 
-To predict chemical shifts for a new molecule:
+To predict chemical shifts and generate a comparison spectrum for a new molecule:
 
 ```bash
-python predict.py "CCO"  # Ethanol example
-python predict.py "c1ccccc1" --b0 600.0 --linewidth 0.5  # Benzene with custom settings
+python predict.py "CCO"                              # Ethanol
+python predict.py "c1ccccc1" --b0 600.0 --linewidth 0.5  # Benzene at 600 MHz
 ```
 
-The prediction script loads the molecule's JSON file (which must exist in the data directory), extracts features for each proton using the same procedure as during training, normalizes them with the saved parameters, and runs inference through the trained model.
+If a JSON file for the SMILES already exists locally in `data/nmr_predictions_balanced/`, it is loaded directly. Otherwise, the script automatically fetches NMR reference data from the [Zakodium API](https://nmr-prediction.service.zakodium.com) and saves it locally for future use.
 
-Output files are saved to `data/predicted_json/` (JSON with predicted shifts) and `data/predicted_plots/` (comparison plot of original vs predicted spectrum).
+Output files:
+- `data/predicted_json/<smiles>_pred.json` — JSON with predicted chemical shifts
+- `tests/<smiles>.png` — comparison plot of reference vs predicted spectrum
+
+#### Comparison plot example (benzene)
+
+The plot shows the reference spectrum (top, blue) and the predicted spectrum (bottom, red):
+
+![Benzene spectrum comparison](tests/c1ccccc1.png)
 
 ## Feature Engineering
 
-The `features.py` module extracts 21 molecular descriptors for each proton attached to any heavy atom (C, N, O, etc.). These features encode the local chemical environment that determines the chemical shift.
+The `features.py` module extracts 21 molecular descriptors for each proton attached to any heavy atom (C, N, O, S, P). These features encode the local chemical environment that determines the chemical shift.
 
-The features can be grouped into several categories:
-
-**Parent atom properties** include the atomic number (distinguishing C-H from N-H or O-H protons), degree (number of bonds), total hydrogen count, formal charge, aromaticity flag, and hybridization state (sp, sp², or sp³).
-
-**Electronic properties** are captured through Gasteiger partial charges. We compute the charge on the parent atom as well as statistics (mean, max, min) of charges on atoms at 2-bond distance. These charges reflect electron density distribution and correlate strongly with chemical shift.
-
-**Neighborhood composition** is described by counting atoms at 2-bond distance: carbons, oxygens, nitrogens, and aromatic atoms. The presence of electronegative neighbors or aromatic systems significantly affects the chemical shift.
-
-**Structural features** indicate whether the proton is adjacent to a π-system (double bond or aromatic ring) and whether it's in a rigid environment (ring or double bond). Rigidity affects conformational averaging of the chemical shift.
-
-**Geometric features** use the 3D coordinates from the molfile to compute distances to neighboring atoms. These capture steric effects and provide information about the molecular geometry.
+| # | Feature | Physical Meaning |
+|---|---------|-----------------|
+| 1 | `parent_atomic_num` | Identifies C-H, N-H, O-H etc. |
+| 2 | `degree` | Connectivity, affects inductive effects |
+| 3 | `total_num_Hs` | Number of equivalent protons |
+| 4 | `formal_charge` | Charge affects shielding |
+| 5 | `is_aromatic` | Ring current effects |
+| 6 | `hyb_sp` | Triple bond / terminal alkyne |
+| 7 | `hyb_sp2` | Double bond / aromatic |
+| 8 | `hyb_sp3` | Saturated carbon |
+| 9 | `gasteiger_charge` | Electronegativity equalization |
+| 10 | `mean_charge_2bonds` | Average electron density at 2 bonds |
+| 11 | `max_charge_2bonds` | Most positive neighbor at 2 bonds |
+| 12 | `min_charge_2bonds` | Most negative neighbor at 2 bonds |
+| 13 | `n_C_2bonds` | Carbon count at 2-bond distance |
+| 14 | `n_O_2bonds` | Oxygen count (deshielding) at 2 bonds |
+| 15 | `n_N_2bonds` | Nitrogen count at 2 bonds |
+| 16 | `n_aromatic_2bonds` | Aromatic atoms at 2-bond distance |
+| 17 | `bonded_to_pi` | Adjacent to double bond or aromatic ring |
+| 18 | `rigid_environment` | In ring or double bond |
+| 19 | `mean_neighbor_distance` | Average bond length (Å) |
+| 20 | `min_neighbor_distance` | Shortest bond (Å) |
+| 21 | `max_neighbor_distance` | Longest bond (Å) |
 
 All features are normalized to the [0, 1] range using min-max scaling, with parameters saved during training for consistent application during inference.
 
 ## Model Architecture
 
-The model is a straightforward Multi-Layer Perceptron with the following structure:
+The model is a Multi-Layer Perceptron with the following structure:
 
-- **Input layer**: 21 features
-- **Hidden layer 1**: 128 neurons with ReLU activation
-- **Hidden layer 2**: 64 neurons with ReLU activation  
-- **Output layer**: 1 neuron (predicted chemical shift in ppm)
+```
+Input (21) → Linear(128) → ReLU → Linear(64) → ReLU → Linear(1)
+```
 
-This architecture was chosen for its simplicity and effectiveness. The two hidden layers provide enough capacity to learn the nonlinear relationship between molecular features and chemical shifts, while the relatively small size prevents overfitting and enables fast training and inference.
+This architecture provides enough capacity to learn the nonlinear relationship between molecular features and chemical shifts, while remaining small enough to avoid overfitting and enable fast inference.
 
 ### Training Configuration
 
@@ -147,19 +160,18 @@ This architecture was chosen for its simplicity and effectiveness. The two hidde
 | Loss Function | Huber Loss |
 | Optimizer | AdamW |
 | Learning Rate | 1e-3 (initial) |
-| LR Scheduler | ReduceLROnPlateau (factor=0.5) |
+| LR Scheduler | ReduceLROnPlateau (factor=0.5, patience=5) |
 | Batch Size | 128 |
 | Max Epochs | 300 |
 | Early Stopping | 20 epochs patience |
 
 ## Data Format
 
-Each JSON file contains NMR data for one molecule:
+Each JSON file contains NMR data for one molecule in the format returned by the Zakodium API:
 
 ```json
 {
   "molfile": "... MDL Molfile V2000/V3000 ...",
-  "smiles": "CCO",
   "nucleus": "1H",
   "signals": [
     {
@@ -167,61 +179,64 @@ Each JSON file contains NMR data for one molecule:
       "delta": 3.65,
       "nbAtoms": 2,
       "atoms": [4, 5],
-      "multiplicity": "q"
+      "js": [
+        {"coupling": 7.1, "multiplicity": 3}
+      ]
     }
   ]
 }
 ```
 
-The `molfile` field contains the 3D molecular structure in MDL format, which is essential for computing geometric features. The `signals` array contains the experimental NMR data, with `delta` being the chemical shift in ppm and `atoms` listing the atom indices (from the molfile) that correspond to this signal.
+The `molfile` field contains the 3D molecular structure in MDL format, essential for computing geometric features. The `atoms` field lists the **hydrogen atom indices** in the molfile that correspond to the signal. The `js` array encodes J-coupling constants used to simulate multiplet patterns in the spectrum.
 
 ## Results
 
-The model is evaluated using Mean Absolute Error (MAE) and the coefficient of determination (R2). MAE represents the average absolute difference between predicted and experimental chemical shifts in ppm, while R2 summarizes how much variance in the targets is explained by the model.
+The model is evaluated using Mean Absolute Error (MAE) and the coefficient of determination (R²).
 
-### Training Results
-
-The following plots show the model's performance during training:
+### Training Curves
 
 #### Validation MAE Evolution
 
-The validation MAE decreases steadily during training before plateauing, indicating successful learning without overfitting:
-
 ![Validation MAE Evolution](training_plots/val_mae_evolution.png)
 
-#### Validation R2 Evolution
-
-The R2 metric increases during training as the model captures more of the variance in chemical shifts:
+#### Validation R² Evolution
 
 ![Validation R2 Evolution](training_plots/val_r2_evolution.png)
 
 #### Predicted vs True Chemical Shifts
 
-The scatter plot shows good agreement between predicted and experimental values across the full chemical shift range. Points cluster tightly around the diagonal line, indicating accurate predictions:
-
 ![Predicted vs True](training_plots/pred_vs_true.png)
 
-#### Error Distribution
+## Project Structure
 
-The histogram of absolute errors shows that most predictions have small errors, with the distribution skewed towards zero:
-
-![Error Histogram](training_plots/error_histogram.png)
+```
+.
+├── build_dataset.py         # Extract features → datasets/proton_dataset.npz
+├── features.py              # Shared feature extraction (21 descriptors)
+├── train.py                 # Train MLP → proton_mlp.pt
+├── predict.py               # Predict shifts + generate comparison PNG
+├── proton_mlp.pt            # Trained model weights
+├── requirements.txt
+├── data/
+│   ├── nmr_predictions_balanced/ # NMR JSON files (1,648 molecules)
+│   └── predicted_json/           # Output predictions (_pred.json)
+├── datasets/
+│   └── proton_dataset.npz        # Preprocessed dataset (36,987 protons, 21 features)
+├── training_plots/               # Training metric plots
+└── tests/                        # Comparison spectrum PNGs
+```
 
 ## Limitations and Future Work
 
 ### Current Limitations
 
-The current model has several limitations that could be addressed in future work:
-
 **Limited feature set**: While 21 features capture the essential local environment, they may miss long-range effects such as ring current anisotropy from distant aromatic groups or through-space interactions in folded conformations.
 
-**No coupling prediction**: The model only predicts chemical shifts, not J-coupling constants. Coupling information is valuable for structure elucidation and would require additional features and possibly a multi-task learning approach.
+**No coupling prediction**: The model only predicts chemical shifts, not J-coupling constants. The J-couplings shown in predicted spectra are taken directly from the reference data.
 
-**Solvent effects**: Chemical shifts can vary significantly depending on the solvent, particularly for exchangeable protons. The model does not account for these effects.
+**Solvent effects**: Chemical shifts can vary significantly depending on the solvent, particularly for exchangeable protons (N-H, O-H). The model does not account for these effects.
 
 ### Potential Improvements
-
-Several directions could improve the model:
 
 **Graph Neural Networks** could replace the MLP to operate directly on the molecular graph, learning optimal features automatically rather than relying on hand-crafted descriptors.
 

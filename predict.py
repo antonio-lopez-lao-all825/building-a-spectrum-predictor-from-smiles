@@ -20,6 +20,7 @@ from math import comb, log, sqrt
 import numpy as np
 import torch
 import matplotlib.pyplot as plt
+import requests
 
 from features import extract_proton_features, prepare_molecule
 
@@ -83,6 +84,73 @@ def normalize(x, X_min, X_max):
 def smiles_to_filename(smiles):
     """Convert SMILES to safe filename."""
     return smiles.replace("/", "_").replace("\\", "_") + ".json"
+
+
+def fetch_nmr_from_zakodium(smiles):
+    """
+    Fetch NMR prediction from zakodium API using a 3-D molfile
+    constructed from the SMILES string.  This mirrors the logic in the
+    standalone extraction script and avoids the 405 error seen previously.
+
+    Returns the JSON dict or None on failure.
+    """
+    try:
+        from rdkit import Chem
+        from rdkit.Chem import AllChem
+
+        mol = Chem.MolFromSmiles(smiles)
+        if mol is None:
+            print(f"⚠️  Could not parse SMILES when preparing molfile: {smiles}")
+            return None
+
+        mol = Chem.AddHs(mol, addCoords=True)
+        if AllChem.EmbedMolecule(mol, AllChem.ETKDGv3()) < 0:
+            print("⚠️  3D embedding failed for generated molfile")
+        else:
+            AllChem.MMFFOptimizeMolecule(mol)
+
+        molfile = Chem.MolToMolBlock(mol)
+    except Exception as e:
+        print(f"⚠️  Error generating molfile from SMILES: {e}")
+        return None
+
+    url = "https://nmr-prediction.service.zakodium.com/v1/predict/proton"
+    payload = {"molfile": molfile}
+    try:
+        resp = requests.post(url, json=payload, timeout=60)
+        resp.raise_for_status()
+        data = resp.json()
+        if "data" in data:
+            data = data["data"]
+        if "signals" not in data:
+            print("Warning: Zakodium response missing 'signals' field")
+            return None
+        return data
+    except requests.exceptions.HTTPError as e:
+        print(f"⚠️  Zakodium API error: {e}")
+        return None
+    except requests.exceptions.RequestException as e:
+        print(f"⚠️  Network error when contacting zakodium: {e}")
+        return None
+    except (json.JSONDecodeError, KeyError) as e:
+        print(f"⚠️  Error parsing zakodium response: {e}")
+        return None
+
+
+def get_available_smiles(limit=5):
+    """Return a short list of SMILES already present in the local JSON store."""
+    try:
+        if not os.path.exists(JSON_DIR):
+            return []
+        available = []
+        for fname in os.listdir(JSON_DIR):
+            if fname.endswith(".json"):
+                available.append(fname.replace(".json", ""))
+                if len(available) >= limit:
+                    break
+        return available
+    except Exception:
+        return []
 
 
 # =============================================================================
@@ -189,22 +257,24 @@ def plot_comparison(ppm_orig, spec_orig, ppm_pred, spec_pred, smiles, output_pat
     """Plot original and predicted spectra for comparison."""
     fig, axes = plt.subplots(2, 1, figsize=(14, 8), sharex=True)
     
-    # Original spectrum (top)
-    axes[0].plot(ppm_orig, spec_orig, 'b-', linewidth=1)
+    # Reference spectrum (top)
+    axes[0].plot(ppm_orig, spec_orig, 'b-', linewidth=1, label="Reference")
     axes[0].fill_between(ppm_orig, spec_orig, alpha=0.3)
     axes[0].set_ylabel("Intensity (norm.)")
-    axes[0].set_title(f"Original Spectrum")
+    axes[0].set_title("Reference Spectrum")
     axes[0].set_xlim(12, 0)
     axes[0].grid(axis='x', linestyle='--', alpha=0.5)
+    axes[0].legend(loc="upper right")
     
     # Predicted spectrum (bottom)
-    axes[1].plot(ppm_pred, spec_pred, 'r-', linewidth=1)
+    axes[1].plot(ppm_pred, spec_pred, 'r-', linewidth=1, label="Predicted")
     axes[1].fill_between(ppm_pred, spec_pred, alpha=0.3, color='red')
     axes[1].set_ylabel("Intensity (norm.)")
     axes[1].set_xlabel("Chemical Shift δ (ppm)")
-    axes[1].set_title(f"Predicted Spectrum")
+    axes[1].set_title("Predicted Spectrum")
     axes[1].set_xlim(12, 0)
     axes[1].grid(axis='x', linestyle='--', alpha=0.5)
+    axes[1].legend(loc="upper right")
     
     fig.suptitle(f"SMILES: {smiles}", fontsize=10, y=0.98)
     plt.tight_layout()
@@ -223,45 +293,66 @@ def predict_from_smiles(smiles, model, X_min, X_max):
     """
     Predict chemical shifts for all protons in a molecule.
     Returns path to output JSON with predicted deltas.
+
+    If a JSON file for the SMILES is missing locally, a request will be
+    performed against Zakodium.  The returned JSON is saved for later use.
     """
     json_path = os.path.join(JSON_DIR, smiles_to_filename(smiles))
 
-    if not os.path.exists(json_path):
-        raise FileNotFoundError(f"JSON not found for SMILES: {smiles}")
-
-    with open(json_path) as f:
-        data = json.load(f)
+    # load or fetch data
+    if os.path.exists(json_path):
+        with open(json_path) as f:
+            data = json.load(f)
+    else:
+        print(f"JSON not found locally. Attempting to fetch from zakodium for: {smiles}")
+        data = fetch_nmr_from_zakodium(smiles)
+        if data is None:
+            available = get_available_smiles(limit=5)
+            msg = f"\n❌ Could not obtain NMR data for SMILES: {smiles}\n"
+            if available:
+                msg += "\n📋 Examples already available:\n"
+                for i, s in enumerate(available, 1):
+                    msg += f"  {i}. {s}\n"
+                msg += "\n💡 Try one of those or verify the SMILES string."
+            else:
+                msg += "\n⚠️  No local data present; populate the dataset or check the API."
+            raise FileNotFoundError(msg)
+        try:
+            with open(json_path, "w") as f:
+                json.dump(data, f, indent=2)
+            print(f"✓ Saved zakodium data to {json_path}")
+        except Exception as e:
+            print(f"⚠️  Warning: could not save fetched data: {e}")
 
     mol, mol_h, conf = prepare_molecule(data["molfile"])
     if mol is None:
         raise ValueError(f"Could not process molecule: {smiles}")
 
-    # Deep copy of original data
+    # deep copy for predictions
     data_pred = json.loads(json.dumps(data))
 
-    for sig in data_pred["signals"]:
+    ALLOWED_PARENTS = {"C", "N", "O", "S", "P"}
+    for sig in data_pred.get("signals", []):
         deltas = []
-
+        # JSON 'atoms' contains H atom indices from the molfile (with explicit Hs).
+        # mol_h preserves the same heavy-atom indices (0..n_heavy-1) and appends
+        # re-embedded Hs starting at n_heavy, so the mapping is consistent.
         for h_idx in sig.get("atoms", []):
-            if h_idx >= mol.GetNumAtoms():
+            if h_idx >= mol_h.GetNumAtoms():
                 continue
-
-            H = mol.GetAtomWithIdx(h_idx)
-            if H.GetSymbol() != "H":
+            h_atom = mol_h.GetAtomWithIdx(h_idx)
+            if h_atom.GetSymbol() != "H":
                 continue
-
-            ALLOWED_PARENTS = {"C", "N", "O", "S", "P"}
-            parent = H.GetNeighbors()[0]
+            neighbors = h_atom.GetNeighbors()
+            if not neighbors:
+                continue
+            parent = neighbors[0]
             if parent.GetSymbol() not in ALLOWED_PARENTS:
                 continue
-
             feat = extract_proton_features(mol_h, parent.GetIdx(), conf)
             feat_norm = normalize(feat, X_min, X_max)
-
             with torch.no_grad():
-                delta = model(torch.tensor(feat_norm)).item()
-            deltas.append(delta)
-
+                deltas.append(model(torch.tensor(feat_norm)).item())
         if deltas:
             sig["delta"] = float(np.mean(deltas))
 
